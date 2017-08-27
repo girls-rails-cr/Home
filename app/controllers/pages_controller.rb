@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def index
-    #code
+    cookies[:saved_load] = false
+    @subscriber = Subscriber.new
   end
 end

@@ -1,1 +1,38 @@
-<p>hola</p>
+<% if cookies[:saved_load] %>
+  Gracias por suscribirse!
+<% else %>
+  <%= form_with(model: @subscriber, local: true) do |form| %>
+    <% if @subscriber.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@subscriber.errors.count, "error") %> Error al guardar tu correo. </h2>
+
+        <ul>
+        <% @subscriber.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, id: :subscriber_name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email, id: :subscriber_email %>
+    </div>
+
+    <div class="field">
+      <%= form.select :source, ["Facebook",  "Twitter", "Instagram", "Otros"],
+                               promot: "¿Cómo te diste cuenta de nostros?",
+                               id: :subscriber_source %>
+    </div>
+
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+<% end %>

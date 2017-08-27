@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.4.1'
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -35,10 +35,15 @@ gem 'jbuilder', '~> 2.5'
 
 # Devise for  authentication,  see here: https://github.com/plataformatec/devise
 gem 'devise'
+# Gibbon is an API wrapper for MailChimp's API, see here: https://github.com/amro/gibbon
+gem 'gibbon', :git => 'https://github.com/amro/gibbon.git'
+# Jobs background
+gem 'sucker_punch', '~> 2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'brakeman', :require => false
 end
 
 group :development do
