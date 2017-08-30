@@ -3,7 +3,7 @@
 
 
 foundation-sites@^6.4.3:
-  version "6.4.3"
+  version "6.3.0"
   resolved "https://registry.yarnpkg.com/foundation-sites/-/foundation-sites-6.4.3.tgz#ea89eb599badf6f03dd526c51f00bdb942a844f6"
   dependencies:
     jquery ">=3.0.0"

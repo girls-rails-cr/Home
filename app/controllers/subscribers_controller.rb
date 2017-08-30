@@ -6,7 +6,6 @@ class SubscribersController < ApplicationController
     respond_to do |format|
       if @subscriber.save
         cookies[:saved_load] = true
-        puts "**************************************** #{cookies[:saved_load]} "
         SubscribeJob.new.async.perform(@subscriber)
         format.html { redirect_to root_path, notice: 'Gracias por suscribirse a nuestra lista de distribución.' }
         format.json { render :show, status: :created, location: @subscriber }
