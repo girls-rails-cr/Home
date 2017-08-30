@@ -13,21 +13,23 @@
 *= require_tree .
 *= require_self
 */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 @import 'foundation_and_overrides';
+@import 'global';
 
 //TODO Refactor this
 
 body {
   background-color: #fff;
   color: #333;
-  margin: 33px;
-  font-family: verdana, arial, helvetica, sans-serif;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 13px;
   line-height: 18px;
 }

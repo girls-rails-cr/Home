@@ -1,38 +1,81 @@
-<% if cookies[:saved_load] %>
-  Gracias por suscribirse!
-<% else %>
-  <%= form_with(model: @subscriber, local: true) do |form| %>
-    <% if @subscriber.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@subscriber.errors.count, "error") %> Error al guardar tu correo. </h2>
+<div class="principal-banner parallax">
+  <div class="head">
+      <h1 class="bold-title">Rails</h1><h1 class="light-title">Gilrs</h1>
+      <h2>Costa Rica</h2>
+      <h3>10 y 11 de Septiembre 2017</h3>
+      <div onclick="moveToSuscrive()" class="suscribe ">Suscribirse</div>
+      <div class="info-p">
+        <p>En su primer versión, durante dos días de nuestro taller gratuito, estaremos entrando al mágico mundo de la construcción de aplicaciones web
+          Railsmocionate y construye cosas increíbles!
+        </p>
+      </div>
+  </div>
+</div>
+<!-- Banner --->
+<div class="information-section parallax">
+  <div class="information">
+    <h3>Información</h3>
+    <div class="as">
+      <p class="question">Lugar del Evento:</p>
+      <p>Universidad Cenfotec, San Pedro de Montes de Oca</p>
+    </div>
+    <div class="as">
+      <p class="question">Fecha:</p>
+      <p>10 y 11 de Septiembre del 2017</p>
+    </div>
+  </div>
+  <div class="information">
+    <h3>Preguntas Frecuentes</h3>
+    <p class="question">¿Cuánto es el costo para el ingreso al workshop?</p>
+    <p> Nada, es gratuito, sólo necesitas buenas energías y ganas de aprender!</p>
+    <p class="question">¿A quién va dirigido?</p>
+    <p> Mujeres de cualquier edad con conocimientos básicos de computación.</p>
+    <p class="question">¿Pueden asistir hombres?</p>
+    <p>Sí, pero la prioridad en la lista de selección es para la chicas!</p>
+  </div>
+</div>
+<div class="patrocinadores parallax">
+  <h3>Patrocinadores</h3>
+</div>
+<!-- Information --->
+<div  id="inscribirse" class="parallax">
+  <% if cookies[:saved_load] %>
+    Gracias por suscribirse!
+  <% else %>
+    <%= form_with(model: @subscriber, local: true) do |form| %>
+      <% if @subscriber.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@subscriber.errors.count, "error") %> Error al guardar tu correo. </h2>
 
-        <ul>
-        <% @subscriber.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
+          <ul>
+          <% @subscriber.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name, id: :subscriber_name %>
+      </div>
+
+      <div class="field">
+        <%= form.label :email %>
+        <%= form.text_field :email, id: :subscriber_email %>
+      </div>
+
+      <div class="field">
+        <%= form.select :source, ["Facebook",  "Twitter", "Instagram", "Otros"],
+                                 promot: "¿Cómo te diste cuenta de nostros?",
+                                 id: :subscriber_source %>
+      </div>
+
+
+      <div class="actions">
+        <%= form.submit %>
       </div>
     <% end %>
-
-    <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name, id: :subscriber_name %>
-    </div>
-
-    <div class="field">
-      <%= form.label :email %>
-      <%= form.text_field :email, id: :subscriber_email %>
-    </div>
-
-    <div class="field">
-      <%= form.select :source, ["Facebook",  "Twitter", "Instagram", "Otros"],
-                               promot: "¿Cómo te diste cuenta de nostros?",
-                               id: :subscriber_source %>
-    </div>
-
-
-    <div class="actions">
-      <%= form.submit %>
-    </div>
   <% end %>
-<% end %>
+</div>
+<!-- Sucription-->
