@@ -14,54 +14,79 @@
 </div>
 <!-- Banner --->
 <div class="information-section parallax-content">
-  <div class="information">
-    <h1>Información</h1>
+  <div class="information one">
+    <h3>Información</h3>
     <div class="as">
       <p class="question">Lugar del Evento:</p>
       <p>Universidad Cenfotec, San Pedro de Montes de Oca</p>
-    </div>
-    <div class="as">
       <p class="question">Fecha:</p>
       <p>10 y 11 de Septiembre del 2017</p>
     </div>
   </div>
-  <div class="information">
+  <div class="information two">
+    <h3>Sobre Rails Girls</h3>
     <div class="about">
-      <h3>Sobre Rails Girls</h3>
       <%= image_tag "workshops2.jpg" %>
     </div>
-    <div>
+    <div class="about-info">
       <ul>
         <li>Las inscripciones son totalmente gratuitas pero los cupos son limitados, Inscripciones abiertas</li>
         <li>Aprenderás a diseñar, prototipar y codificar con la ayuda de nuestros tutores.</li>
         <li>Necesitas tu propio computador (preferiblemente), curiosidad y una pizca de imaginación.</li>
-        <li>Quieres ayudar? Estamos buscando voluntarios y apoyos económicos Contáctanos.</li>
+        <li>Quieres ayudar? Estamos buscando voluntarios y apoyos económicos <a href="mailto:railsrailsgirlscr@gmail.com"> Contáctanos.</a></li>
       </ul>
     </div>
   </div>
-  <div class="information">
-    <h3>Preguntas Frecuentes</h3>
-    <p class="question">¿Cuánto es el costo para el ingreso al workshop?</p>
-    <p> Nada, es gratuito, sólo necesitas buenas energías y ganas de aprender!</p>
-    <p class="question">¿A quién va dirigido?</p>
-    <p> Mujeres de cualquier edad con conocimientos básicos de computación.</p>
-    <p class="question">¿Pueden asistir hombres?</p>
-    <p>Sí, pero la prioridad en la lista de selección es para la chicas!</p>
+  <div class="information one ">
+    <div class="faq as">
+      <h3>Preguntas Frecuentes</h3>
+      <p class="question">¿Cuánto es el costo para el ingreso al workshop?</p>
+      <p> Nada, es gratuito, sólo necesitas buenas energías y ganas de aprender!</p>
+      <p class="question">¿A quién va dirigido?</p>
+      <p> Mujeres de cualquier edad con conocimientos básicos de computación.</p>
+      <p class="question">¿Pueden asistir hombres?</p>
+      <p>Sí, pero la prioridad en la lista de selección es para la chicas!</p>
+    </div>
   </div>
 </div>
-<div class="information-section  parallax-content">
+<div class="information-section  sponsors-section parallax-content">
   <div class="information">
+    <div class="as"></div>
     <h3>Patrocinadores</h3>
-    <div>
+    <p>Rails Girls Cali es co-organizado con nuestros patrocinadores.</p>
+    <p>¿Quieres ayudar?, Envíanos un  <a href="mailto:railsrailsgirlscr@gmail.com"> correo electrónico!</a></p>
+    <div class="sponsor-r">
+      <div class="left">
         <%= image_tag "monkeyFace.png" %>
+      </div>
+      <div class="right">
+
+      </div>
+    </div>
+    <div class="sponsor-r">
+      <div class="right">
+
+        <%= image_tag "gap.jpeg" %>
+      </div>
+      <div class="left">
+
+      </div>
+    </div>
+    <div class="sponsor-r">
+      <div class="left">
+          <%= image_tag "guayaba.png" %>
+      </div>
+      <div class="right">
+      </div>
     </div>
   </div>
 </div>
 <!-- Information --->
-<div  id="inscribirse" class="parallax-content">
+<div  id="inscribirse" class="parallax-content suscribe-section">
   <% if cookies[:saved_load] %>
-    Gracias por suscribirse!
+    <h3>Gracias por suscribirse!</h3>
   <% else %>
+  <div class="information">
     <%= form_with(model: @subscriber, local: true) do |form| %>
       <% if @subscriber.errors.any? %>
         <div id="error_explanation">
@@ -76,26 +101,28 @@
       <% end %>
 
       <div class="field">
-        <%= form.label :name %>
+        <h3>Nombre completo:</h3>
         <%= form.text_field :name, id: :subscriber_name %>
       </div>
 
       <div class="field">
-        <%= form.label :email %>
+        <h3>Correo Electronico</h3>
         <%= form.text_field :email, id: :subscriber_email %>
       </div>
 
       <div class="field">
+        <h3>¿Cómo te diste cuenta de nostros?</h3>
         <%= form.select :source, ["Facebook",  "Twitter", "Instagram", "Otros"],
                                  promot: "¿Cómo te diste cuenta de nostros?",
                                  id: :subscriber_source %>
       </div>
 
 
-      <div class="actions">
+      <div class="actions ">
         <%= form.submit %>
       </div>
     <% end %>
+  </div>
   <% end %>
 </div>
 <!-- Sucription-->
