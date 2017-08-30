@@ -1,0 +1,12 @@
+default: &default
+  mailchimp_api_key: 65bbefec0906279c288eb6144039e08a-us16
+  mailchimp_list_id: c0ac44c3b9
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
