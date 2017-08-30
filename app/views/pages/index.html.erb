@@ -1,20 +1,21 @@
 <div class="principal-banner parallax">
   <div class="head">
+      <%= image_tag "face.png" %>
       <h1 class="bold-title">Rails</h1><h1 class="light-title">Gilrs</h1>
       <h2>Costa Rica</h2>
       <h3>10 y 11 de Septiembre 2017</h3>
       <div onclick="moveToSuscrive()" class="suscribe ">Suscribirse</div>
-      <div class="info-p">
-        <p>En su primer versión, durante dos días de nuestro taller gratuito, estaremos entrando al mágico mundo de la construcción de aplicaciones web
-          Railsmocionate y construye cosas increíbles!
-        </p>
-      </div>
   </div>
 </div>
+<div class="info-p parallax-content">
+  <p>En su primer versión, durante dos días de nuestro taller gratuito, estaremos entrando al mágico mundo de la construcción de aplicaciones web
+    Railsmocionate y construye cosas increíbles!
+  </p>
+</div>
 <!-- Banner --->
-<div class="information-section parallax">
+<div class="information-section parallax-content">
   <div class="information">
-    <h3>Información</h3>
+    <h1>Información</h1>
     <div class="as">
       <p class="question">Lugar del Evento:</p>
       <p>Universidad Cenfotec, San Pedro de Montes de Oca</p>
@@ -22,6 +23,20 @@
     <div class="as">
       <p class="question">Fecha:</p>
       <p>10 y 11 de Septiembre del 2017</p>
+    </div>
+  </div>
+  <div class="information">
+    <div class="about">
+      <h3>Sobre Rails Girls</h3>
+      <%= image_tag "workshops2.jpg" %>
+    </div>
+    <div>
+      <ul>
+        <li>Las inscripciones son totalmente gratuitas pero los cupos son limitados, Inscripciones abiertas</li>
+        <li>Aprenderás a diseñar, prototipar y codificar con la ayuda de nuestros tutores.</li>
+        <li>Necesitas tu propio computador (preferiblemente), curiosidad y una pizca de imaginación.</li>
+        <li>Quieres ayudar? Estamos buscando voluntarios y apoyos económicos Contáctanos.</li>
+      </ul>
     </div>
   </div>
   <div class="information">
@@ -34,11 +49,16 @@
     <p>Sí, pero la prioridad en la lista de selección es para la chicas!</p>
   </div>
 </div>
-<div class="patrocinadores parallax">
-  <h3>Patrocinadores</h3>
+<div class="information-section  parallax-content">
+  <div class="information">
+    <h3>Patrocinadores</h3>
+    <div>
+        <%= image_tag "monkeyFace.png" %>
+    </div>
+  </div>
 </div>
 <!-- Information --->
-<div  id="inscribirse" class="parallax">
+<div  id="inscribirse" class="parallax-content">
   <% if cookies[:saved_load] %>
     Gracias por suscribirse!
   <% else %>
