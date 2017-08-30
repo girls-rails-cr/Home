@@ -1,5 +1,6 @@
 class SubscribersController < ApplicationController
   require 'sucker_punch/async_syntax'
+
   def create
     @subscriber = Subscriber.new(subscriber_params)
 
@@ -7,7 +8,7 @@ class SubscribersController < ApplicationController
       if @subscriber.save
         cookies[:saved_load] = true
         SubscribeJob.new.async.perform(@subscriber)
-        format.html { redirect_to root_path, notice: 'Gracias por suscribirse a nuestra lista de distribución.' }
+        format.html { redirect_to root_path, notice: 'Gracias por suscribirse!' }
         format.json { render :show, status: :created, location: @subscriber }
       else
         format.html { redirect_to root_path, notice: 'Sorry intentalo de nuevo.' }
