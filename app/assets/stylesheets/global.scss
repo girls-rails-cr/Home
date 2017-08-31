@@ -149,7 +149,7 @@ a:hover{
 }
 
 .suscribe {
-  color: white;
+  color: white !important;
   border-radius: 5px;
   background-color: rgb(219, 0, 48);
   width: 250px;
@@ -165,6 +165,10 @@ a:hover{
   line-height: 1;
   text-align: center;
   cursor: pointer;
+}
+.suscribe:focus, .suscribe:hover {
+  color: white !important;
+  background-color: #BA0029 !important;
 }
 .two{
   h3{
@@ -185,7 +189,7 @@ a:hover{
   }
 
   background-color: #D15B69;
-  height: 600px;
+  height: 1000px;
   margin: 10px -100px 0px;
   padding-top: 40px;
   input{
@@ -272,7 +276,7 @@ a:hover{
   img{
     float: left;
     width: 200px;
-    height: 200px;
+    height: 90px;
     margin: 20px 20px 20px 0px;
     display: inline-block;
   }
@@ -282,7 +286,7 @@ a:hover{
      margin-top: 10px;
     line-height: 2;
     text-align: justify;
-    font-size: 5em;
+    font-size: 4em;
   }
 }
 .sponsors-grid{
@@ -302,3 +306,21 @@ a:hover{
     text-align: justify;
     font-size: 5em;
   }
+
+
+  .footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:80px;
+   width:100%;
+     color: white;
+   background:rgb(238, 117, 129);
+   h4{
+    font-size: 30px;
+    text-align: center;
+    font-weight: 200;
+    margin-top: 20px;
+
+   }
+}
