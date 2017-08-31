@@ -1,34 +1,41 @@
-<div class="principal-banner parallax">
-  <div class="head">
+<div class="grid-x grid-margin-x ">
+  <div class="small-8 small-offset-2 parallax  principal-banner text-center">
     <%= image_tag "face.png" %>
     <h1 class="bold-title">Rails</h1>
-    <h1 class="light-title">Gilrs</h1>
+    <h1 class="light-title">Girls</h1>
     <h2>Costa Rica</h2>
     <h3>10 y 11 de Septiembre 2017</h3>
-    <div onclick="moveToSuscrive()" class="suscribe ">Suscribirse</div>
+    <a href="#inscribirse" class="suscribe">Inscribirse</a>
+
   </div>
 </div>
-<div class="info-p parallax-content">
-  <p>En su primer versión, durante dos días de nuestro taller gratuito, estaremos entrando al mágico mundo de la construcción de aplicaciones web Railsmocionate y construye cosas increíbles!
-  </p>
-</div>
-<div class="information-section parallax-content">
-  <div class="information one">
-    <h3>Información</h3>
-    <div class="as">
-      <p class="question">Lugar del Evento:</p>
-      <p>Universidad Cenfotec, San Pedro de Montes de Oca</p>
-      <p class="question">Fecha:</p>
-      <p>10 y 11 de Septiembre del 2017</p>
+<div class="parallax-content">
+    <div class=" info-p">
+      <div class="div-info">
+        <p>En su primer versión, durante dos días de nuestro taller gratuito, estaremos entrando al mágico mundo de la construcción de aplicaciones web Railsmocionate y construye cosas increíbles!
+      </div>
     </div>
-  </div>
-  <div class="information two">
-    <h3>Sobre Rails Girls</h3>
-    <div class="about">
-      <%= image_tag "workshops2.jpg" %>
+
+    <div class="grid-x grid-info">
+      <div class="small-12 large-6  information-section ">
+        <h3>Información</h3>
+        <div class="as">
+          <p class="question">Lugar del Evento:</p>
+          <p>Universidad Cenfotec, San Pedro de Montes de Oca</p>
+          <p class="question">Fecha:</p>
+          <p>10 y 11 de Septiembre del 2017</p>
+        </div>
+      </div>
     </div>
-    <div class="about-info">
-      <ul>
+
+      <div class="grid-x grid-info ">
+          <h3>Sobre Rails Girls</h3>
+        <div class="columns  small-12 large-6 about">
+
+          <%= image_tag "workshops2.jpg" %>
+        </div>
+        <div class="columns small-12  large-6  about ">
+          <ul>
         <li>Las inscripciones son totalmente gratuitas pero los cupos son limitados, Inscripciones abiertas</li>
         <li>Aprenderás a diseñar, prototipar y codificar con la ayuda de nuestros tutores.</li>
         <li>Necesitas tu propio computador (preferiblemente), curiosidad y una pizca de imaginación.</li>
@@ -37,11 +44,12 @@
             Contáctanos.</a>
         </li>
       </ul>
-    </div>
-  </div>
-  <div class="information one ">
-    <div class="faq as">
-      <h3>Preguntas Frecuentes</h3>
+        </div>
+      </div>
+      <div class="grid-x grid-info ">
+
+        <div class="small-12  large-6 about">
+          <h3>Preguntas Frecuentes</h3>
       <p class="question">¿Cuánto es el costo para el ingreso al workshop?</p>
       <p>
         Nada, es gratuito, sólo necesitas buenas energías y ganas de aprender!</p>
@@ -50,6 +58,7 @@
         Mujeres de cualquier edad con conocimientos básicos de computación.</p>
       <p class="question">¿Pueden asistir hombres?</p>
       <p>Sí, pero la prioridad en la lista de selección es para la chicas!</p>
+<<<<<<< HEAD
     </div>
   </div>
 </div>
@@ -70,18 +79,28 @@
     <div class="sponsor-r">
       <div class="right">
         <%= image_tag "gap.png" %>
+=======
+        </div>
+>>>>>>> 3b261903b906f273849b812e08550dadc5481233
       </div>
-      <div class="left"></div>
-    </div>
-    <div class="sponsor-r">
-      <div class="left">
-        <%= image_tag "guayaba.png" %>
+      <div class="grid-x sponsors-info ">
+        <h3>Patrocinadores</h3>
+        <div class="sponsors-grid">
+          <%= image_tag "logo-ml.jpg" %>
+          <p><a href="https://monkeylabs.cr/">Monkey Labs</a> empresa dedicada a potenciar a nuestros clientes mediante soluciones tecnológicas a la medida, de la más alta calidad. Manteniendo una comunicación clara y honesta en todo momento.
+            Nuestros servicios incluyen desarrollo y posicionamiento web, desarrollo de aplicaciones móviles, infraestructura, outsourcing y asesoría en toda el área de tecnologías de información.</p>
+        </div>
+        <div class="sponsors-grid">
+          <%= image_tag "gap.png" %>
+          <p>
+            <a href="https://www.growthaccelerationpartners.com/">Growth Acceleration Partners (GAP)</a> es una empresa líder de desarrollo de software personalizado que se asocia con empresas medianas para diseñar y desarrollar aplicaciones móviles y web / cloud personalizadas.</p>
+        </div>
+        <div class="sponsors-grid">
+          <%= image_tag "guayaba.png" %>
+           <p><a href="https://delaguayaba.com/">deLaGuayaba</a> desarrolla aplicaciones móviles y software para medir, analizar, estandarizar, optimizar y controlar las actividades en una empresa. Nuestros metodologías incluyen análisis de datos e interacción con la cultura de cada organización.</p>
+        </div>
       </div>
-      <div class="right"></div>
-    </div>
-  </div>
-</div>
-<div id="inscribirse" class="parallax-content suscribe-section">
+      <div id="inscribirse" class=" suscribe-section">
   <% if cookies[:saved_load] %>
   <h3>Gracias por suscribirse!</h3>
 <% else %>
@@ -93,21 +112,25 @@
     </div>
 
     <div class="field">
-      <h3>Correo Electronico</h3>
+      <h3>Correo Electrónico</h3>
       <%= form.text_field :email, id: :subscriber_email %>
     </div>
 
     <div class="field">
-      <h3>¿Cómo te diste cuenta de nostros?</h3>
+      <h3>¿Cómo te diste cuenta de nosotros?</h3>
       <%= form.select :source, ["Facebook",  "Twitter", "Instagram", "Otros"],
                                  promot: "¿Cómo te diste cuenta de nostros?",
                                  id: :subscriber_source %>
     </div>
 
     <div class="actions ">
-      <%= form.submit %>
+      <%= form.submit "Enviar Inscripción" %>
     </div>
     <% end %>
   </div>
   <% end %>
+</div>
+<div class="footer">
+    <h4>Rails Girls Costa Rica 2017</h4>
+</div>
 </div>

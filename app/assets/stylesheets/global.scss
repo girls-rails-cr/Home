@@ -1,12 +1,16 @@
 $red: rgb(219, 0, 48);
-
+.body{
+  display: inline-grid;
+  width: 100%;
+}
 .parallax {
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 900px;
+  min-height: 900px;
+  margin-bottom: 100px;
   position: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -22,28 +26,33 @@ a:hover{
 .info-p {
   text-align: center;
   background-color:#D1434A;
-  p {
-    font-size: 25px;
-    text-align: -webkit-center;
-    line-height: 2;
-    color: #fff;
-    font-weight: 100;
+  height: 200px;
+  padding-top: 20px;
+  margin: 0px -100px 30px;
+  .div-info{
+    width: 900px;
+    margin: 10px auto;
+    p {
+      font-size: 25px;
+      text-align: -webkit-center;
+      line-height: 2;
+      color: #fff;
+      font-weight: 100;
+    }
   }
+
 }
 .parallax-content {
   max-width: 100%;
-  top: 1100px;
+  min-width: 80%;
+  top: 1000px;
   position: relative;
-  padding: 50px;
-  font-size: 20px;
+  padding: 0px;
+  font-size: 4px;
+  background-color: white;
 }
 
 .principal-banner {
-  display: table;
-  height: 100vh;
-  width: 100%;
-  padding: 30px;
-
   img {
     width: 400px;
     height: 350px;
@@ -88,57 +97,21 @@ a:hover{
 }
 
 .information-section {
-  background-size: cover;
-  display: table;
-  height: 500px;
-  width: 100%;
-  padding: 40px 100px;
-  background-color: #fff;// rgb(222, 197, 200);
-  .about-info{
-    width: 450px;
-    float: right;
-    ul{
-      list-style: none;
-    }
-    ul>li{
-      font-size: 20px;
-      line-height: 1.5;
-      margin: 20px 0px;
-      font-weight: 100;
-      text-align: justify;
-    }
+  p{
+    line-height: 2;
+    font-size: 20px;
   }
-  .about{
-    width: 450px;
-    float: left;
-    img{
-      width: 500px;
-      display: inline-block;
-      margin-top: 100px;
-    }
+
+
+  h4 {
+    font-size: 40px;
   }
-  .information {
-    p{line-height: 2;}
-    ul{
-        display: inline-block;
-    }
-    h3 {
-      font-size: 40px;
-      font-weight: 200;
-      color: rgb(240, 77, 85);
-    }
+  img{
+    width: 500px;
 
-    h4 {
-      font-size: 40px;
-    }
-
-    p {
-      font-size: 20px;
-    }
-
-    .question {
-      color: rgb(229, 93, 110);
-    }
+  }
+  .question {
+    color: rgb(229, 93, 110);
   }
 }
 
@@ -176,7 +149,7 @@ a:hover{
 }
 
 .suscribe {
-  color: white;
+  color: white !important;
   border-radius: 5px;
   background-color: rgb(219, 0, 48);
   width: 250px;
@@ -192,6 +165,10 @@ a:hover{
   line-height: 1;
   text-align: center;
   cursor: pointer;
+}
+.suscribe:focus, .suscribe:hover {
+  color: white !important;
+  background-color: #BA0029 !important;
 }
 .two{
   h3{
@@ -210,11 +187,25 @@ a:hover{
     font-weight: 100;
     font-size: 35px;
   }
-  input{
-    border-radius: 4px;
-  }
+
   background-color: #D15B69;
-  height: 600px;
+  height: 1000px;
+  margin: 10px -100px 0px;
+  padding-top: 40px;
+  input{
+    height: 3em;
+    font-family: 'Roboto', sans-serif;
+   font-size: 5em;
+   font-weight: 200;
+     border-radius: 4px;
+  }
+  select{
+    font-family: 'Roboto', sans-serif;
+   font-size: 5em;
+   font-weight: 200;
+     height: 3em;
+       border-radius: 4px;
+  }
 }
 .actions {
   input[type="submit"]{
@@ -241,4 +232,95 @@ a:hover{
   text-align: center;
   width: 50px;
   margin-left: 50px;
+}
+.about{
+  .question {
+    color: rgb(240, 77, 85);
+  }
+  p{
+    position: relative;
+     margin-top: 10px;
+    line-height: 2;
+    text-align: justify;
+    font-size: 5em;
+  }
+  img{
+    margin-bottom: 50px;
+  }
+  ul{
+    margin-top: -30px;
+    list-style: none;
+    display: inline-block;
+  }
+  ul>li{
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 20px 0px;
+    font-weight: 100;
+    text-align: justify;
+  }
+  h3{
+        margin-left: 10px;
+  }
+}
+.grid-info {
+      padding-left: 30px;
+    margin: 10px auto;
+    max-width: 1000px;
+}
+.sponsors-info {
+  width: 1000px;
+  margin: 0px auto;
+  padding-left: 30px;
+
+  img{
+    float: left;
+    width: 200px;
+    height: 90px;
+    margin: 20px 20px 20px 0px;
+    display: inline-block;
+  }
+  p{
+    position: relative;
+   float: inherit;
+     margin-top: 10px;
+    line-height: 2;
+    text-align: justify;
+    font-size: 4em;
+  }
+}
+.sponsors-grid{
+  display: inline-block;
+}
+
+  h3 {
+    font-size: 40px;
+    font-weight: 200;
+    color: rgb(240, 77, 85);
+  }
+
+  p{
+    position: relative;
+     margin-top: 10px;
+    line-height: 2;
+    text-align: justify;
+    font-size: 5em;
+  }
+
+
+  .footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:80px;
+   width:100%;
+     color: white;
+   background:rgb(238, 117, 129);
+   h4{
+    font-size: 30px;
+    text-align: center;
+    font-weight: 200;
+    margin-top: 20px;
+
+   }
 }
