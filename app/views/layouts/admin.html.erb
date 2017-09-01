@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Admin</title>
-  <%= csrf_meta_tags %>
-
-  <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload' %>
-</head>
+  <head>
+    <title>Admin</title>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag "icon.ico" %>
+    <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload' %>
+  </head>
 
   <body >
     <%= yield %>

@@ -41,6 +41,8 @@ gem 'gibbon', :git => 'https://github.com/amro/gibbon.git'
 gem 'sucker_punch', '~> 2.0'
 #Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
 gem "figaro"
+#Metamagic is a simple Ruby on Rails plugin for creating meta tags.
+gem 'metamagic'
 
 gem 'delayed_job_active_record'
 

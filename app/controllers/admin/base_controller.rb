@@ -7,7 +7,7 @@ module Admin
 
     private
       def admin_filter!
-        redirect_to root_path unless current_user.admin?
+        redirect_to admin_root_path if current_user.admin?
       end
       layout 'admin'
   end
