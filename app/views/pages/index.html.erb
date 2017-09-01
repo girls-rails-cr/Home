@@ -21,7 +21,7 @@
         <h3>Información</h3>
         <div class="as">
           <p class="question">Lugar del Evento:</p>
-          <p>Universidad Cenfotec, San Pedro de Montes de Oca</p>
+          <p>Universidad Cenfotec, Sede San Pedro</p>
           <p class="question">Fecha:</p>
           <p>9 y 10 de Septiembre del 2017</p>
         </div>
@@ -87,12 +87,12 @@
     <%= form_with(model: Subscriber.new, local: true) do |form| %>
     <div class="field">
       <h3>Nombre completo:</h3>
-      <%= form.text_field :name, id: :subscriber_name %>
+      <%= form.text_field :name, id: :subscriber_name , required: true%>
     </div>
 
     <div class="field">
       <h3>Correo Electrónico</h3>
-      <%= form.text_field :email, id: :subscriber_email %>
+      <%= form.text_field :email, id: :subscriber_email, required: true %>
     </div>
     <div class="field">
       <h3>Número Telefónico</h3>
