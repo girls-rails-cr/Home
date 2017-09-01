@@ -39,6 +39,8 @@ gem 'devise'
 gem 'gibbon', :git => 'https://github.com/amro/gibbon.git'
 # Jobs background
 gem 'sucker_punch', '~> 2.0'
+#Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
+gem "figaro"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
