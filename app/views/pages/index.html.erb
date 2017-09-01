@@ -4,7 +4,7 @@
     <h1 class="bold-title">Rails</h1>
     <h1 class="light-title">Girls</h1>
     <h2>Costa Rica</h2>
-    <h3>10 y 11 de Septiembre 2017</h3>
+    <h3>9 y 10 de Septiembre 2017</h3>
     <a href="#inscribirse" class="suscribe">Inscribirse</a>
 
   </div>
@@ -94,7 +94,14 @@
       <h3>Correo Electrónico</h3>
       <%= form.text_field :email, id: :subscriber_email %>
     </div>
-
+    <div class="field">
+      <h3>Número Telefónico</h3>
+      <%= form.text_field :phone_number, id: :subscriber_email %>
+    </div>
+    <div class="field">
+      <h3>Nivel de Conocimiento Técnico</h3>
+      <%= form.select :level_knowledge, Subscriber.level_knowledges.map { |key, value| [key.humanize, key] }%>
+    </div>
     <div class="field">
       <h3>¿Cómo te diste cuenta de nosotros?</h3>
       <%= form.select :source, ["Facebook",  "Twitter", "Instagram", "Otros"],
