@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   PagesController.action_methods.each do |action|
     get "/#{action}", to: "pages##{action}", as: "#{action}_page"
   end
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 end

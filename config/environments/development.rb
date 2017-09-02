@@ -26,8 +26,20 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  #Local mailer config
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  #config.action_mailer.delivery_method = :letter_opener_web
+  #config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.smtp_settings = {
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+    :domain => 'railsgirlscr.org',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false

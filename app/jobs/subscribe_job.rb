@@ -9,6 +9,7 @@ class SubscribeJob
       $mailchimp.timeout = 30
       $mailchimp.open_timeout = 30
       $mailchimp.lists(mailchimp_list_id.to_s).members.create(body: { email_address: subscriber.email.to_s, status: 'subscribed', merge_fields: { FNAME: subscriber.name.to_s, LNAME: '' } })
+      SubscriberMailer.subscriber_email(subscriber).deliver
     rescue Gibbon::MailChimpError => mce
       SuckerPunch.logger.error("subscribe failed: due to #{mce.message}")
       raise mce
