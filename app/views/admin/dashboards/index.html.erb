@@ -13,8 +13,6 @@
   </div>
 </div>
 
-
-
 <div class="row"><div class="small-4 large-centered columns">  <h2> <%= @subscribers.size %> Suscriptores</h2> </div></div>
 <table>
   <thead>
@@ -24,6 +22,8 @@
       <th>Source</th>
       <th>Nivel</th>
       <th># telefono</th>
+      <td>Confirmed</td>
+      <td>Check In</td>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -36,6 +36,28 @@
       <td><%= subscriber.source %></td>
       <td><%= subscriber.level_knowledge %></td>
       <td><%= subscriber.phone_number %></td>
+      <td>
+        <div class="check-link">
+          <%= check_box_tag "status_confirmed#{subscriber.id}", subscriber.id, subscriber.confirmed,
+            data: {
+                remote: true,
+                url: admin_update_confirmed_path(subscriber.id),
+                method: :put
+              } %>
+              <label for="status_confirmed<%=subscriber.id%>"></label>
+        </div>
+      </td>
+      <td>
+        <div class="check-link">
+          <%= check_box_tag "status_registered#{subscriber.id}", subscriber.id, subscriber.registered,
+            data: {
+                remote: true,
+                url: admin_update_registered_path(subscriber.id),
+                method: :put
+              } %>
+              <label for="status_confirmed<%=subscriber.id%>"></label>
+        </div>
+      </td>
     </tr>
     <% end %>
   </tbody>

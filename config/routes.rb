@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'dashboards#index', as: 'root'
+    put 'update_registered/:id', to: 'dashboards#update_registered', as: :update_registered
+    put 'update_confirmed/:id', to: 'dashboards#update_confirmed', as: :update_confirmed
   end
 
   PagesController.action_methods.each do |action|
