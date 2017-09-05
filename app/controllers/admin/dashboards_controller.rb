@@ -1,7 +1,7 @@
 module Admin
   class DashboardsController < Admin::BaseController
     def index
-      @subscribers = Subscriber.all.order("created_at DESC")
+      @subscribers = Subscriber.all.order("created_at ASC")
     end
 
     def update_registered

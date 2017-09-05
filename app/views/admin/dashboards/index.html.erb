@@ -38,7 +38,7 @@
       <td><%= subscriber.phone_number %></td>
       <td>
         <div class="check-link">
-          <%= check_box_tag "status_confirmed#{subscriber.id}", subscriber.id, subscriber.confirmed,
+          <%= check_box_tag "status_confirmed#{subscriber.id}", subscriber.id, subscriber.confirmed?,
             data: {
                 remote: true,
                 url: admin_update_confirmed_path(subscriber.id),
@@ -49,7 +49,7 @@
       </td>
       <td>
         <div class="check-link">
-          <%= check_box_tag "status_registered#{subscriber.id}", subscriber.id, subscriber.registered,
+          <%= check_box_tag "status_registered#{subscriber.id}", subscriber.id, subscriber.registered?,
             data: {
                 remote: true,
                 url: admin_update_registered_path(subscriber.id),

@@ -10,12 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= require jquery/dist/jquery
+//= require jquery-ujs/src/rails
 //= require foundation-sites/dist/js/foundation
-//= require jquery
 //= require_tree .
 //= require turbolinks
 
 $(document).on('turbolinks:load', function() {
   $(document).foundation();
-}
+});
