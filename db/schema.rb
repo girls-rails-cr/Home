@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20170905014821) do
     t.datetime "updated_at", null: false
     t.integer "level_knowledge"
     t.string "phone_number"
-    t.boolean "registered", default: true
+    t.boolean "registered"
     t.boolean "confirmed"
   end
 
