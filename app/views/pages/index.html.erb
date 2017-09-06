@@ -189,39 +189,8 @@
       <h3>¡Hola, estamos emocionados por empezar!</h3>
       <h3>¡Gracias por inscribirse!</h3>
       <h3>Nos vemos este 9 y 10 de septiembre.</h3>
-    <% elsif @subscribers.size >= 60 %>
-      <h3>Lamentamos decirte que hemos cerrado el proceso de inscripcion. <br> Te dejaremos en una lista de espera.</h3>
-        <div class="information">
-          <%= form_with(model: Subscriber.new, local: true) do |form| %>
-          <div class="field">
-            <h3>Nombre completo:</h3>
-            <%= form.text_field :name, id: :subscriber_name , required: true%>
-          </div>
-
-          <div class="field">
-            <h3>Correo Electrónico</h3>
-            <%= form.text_field :email, id: :subscriber_email, required: true %>
-          </div>
-          <div class="field">
-            <h3>Número Telefónico</h3>
-            <%= form.text_field :phone_number, id: :subscriber_email %>
-          </div>
-          <div class="field">
-            <h3>Nivel de Conocimiento Técnico</h3>
-            <%= form.select :level_knowledge, Subscriber.level_knowledges.map { |key, value| [key.humanize, key] }%>
-          </div>
-          <div class="field">
-            <h3>¿Cómo te diste cuenta de nosotros?</h3>
-            <%= form.select :source, ["Facebook",  "Twitter", "Instagram", "Otros"],
-                                   promot: "¿Cómo te diste cuenta de nostros?",
-                                   id: :subscriber_source %>
-          </div>
-
-          <div class="actions ">
-              <%= form.submit "Enviar Inscripción" %>
-          </div>
-          <% end %>
-      </div>
+    <% elsif @subscribers.size >= 120 %>
+      <h3>Lamentamos decirte que hemos cerrado el proceso de inscripcion. <br> Nos vemos el próximo año.</h3>
     <% else %>
       <div class="information">
         <%= form_with(model: Subscriber.new, local: true) do |form| %>
