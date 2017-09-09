@@ -28,7 +28,10 @@
       <th># telefono</th>
       <td>Confirmed</td>
       <td>Check In</td>
-      <th colspan="3"></th>
+      <th>Second Check In </th>
+      <th>Comments</th>
+      <th>Work?</th>
+      <td>Actions</td>
     </tr>
   </thead>
 
@@ -61,7 +64,24 @@
               } %>
               <label for="status_registered<%=subscriber.id%>"></label>
         </div>
+
       </td>
+      <td>
+      <div class="check-link">
+          <%= check_box_tag "second_status_registered#{subscriber.id}", subscriber.id, subscriber.second_confirmed,
+            data: {
+                remote: true,
+                url: admin_second_update_confirmed_path(subscriber.id),
+                method: :put
+              } %>
+              <label for="second_status_registered<%=subscriber.id%>"></label>
+      </div>
+      </td>
+      <%= form_with(url: admin_update_details_path(subscriber.id), local: true) do |form| %>
+        <td><%= form.text_field :comments, id: :comments, value: subscriber.comments %></td>
+        <td><%= form.text_field :work, id: :work, value: subscriber.work %></td>
+        <td><%= form.submit "Guardar" %></td>
+      <% end  %>
     </tr>
     <% end %>
   </tbody>
