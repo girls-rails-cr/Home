@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     root to: 'dashboards#index', as: 'root'
     put 'update_registered/:id', to: 'dashboards#update_registered', as: :update_registered
     put 'update_confirmed/:id', to: 'dashboards#update_confirmed', as: :update_confirmed
+    put 'second_update_confirmed/:id', to: 'dashboards#second_update_confirmed', as: :second_update_confirmed
+    post 'update_details/:id', to: 'dashboards#update_details', as: :update_details
   end
 
   PagesController.action_methods.each do |action|
