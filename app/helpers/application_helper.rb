@@ -8,4 +8,9 @@ module ApplicationHelper
     @registred = Subscriber.where(registered: true)
     @registred.size
   end
+
+  def second_confirmed
+    @second_confirmed = Subscriber.where(second_confirmed: true)
+    @second_confirmed.size
+  end
 end
