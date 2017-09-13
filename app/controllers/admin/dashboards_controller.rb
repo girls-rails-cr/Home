@@ -29,17 +29,10 @@ module Admin
       @subscriber.update_attributes(comments:  params[:comments], work: params[:work] )
       redirect_to admin_root_path
     end
-
     def export_csv
-      dir = "#{Rails.root}/public/csv"
-      FileUtils.mkdir(dir) unless Dir.exists?(dir)
-      file = "#{Rails.root}/public/csv/exported_list.csv"
-      subscribers = Subscriber.where(second_confirmed: true)
-      CSV.open( file, 'w' ) do |writer|
-        writer << ['Name', 'Phone number', 'email', 'Job experience']
-        subscribers.each do|s|
-          writer << [s.name, s.phone_number, s.email, s.work]
-        end
+      @subscribers = Subscriber.where(second_confirmed: true)
+      respond_to do |format|
+        format.csv { send_data @subscribers.as_csv }
       end
     end
 
