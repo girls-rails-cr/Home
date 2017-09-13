@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     put 'update_confirmed/:id', to: 'dashboards#update_confirmed', as: :update_confirmed
     put 'second_update_confirmed/:id', to: 'dashboards#second_update_confirmed', as: :second_update_confirmed
     post 'update_details/:id', to: 'dashboards#update_details', as: :update_details
+    post 'export_csv', to: 'dashboards#export_csv', as: :export_csv
   end
 
   PagesController.action_methods.each do |action|
