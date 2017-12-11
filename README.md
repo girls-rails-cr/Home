@@ -20,3 +20,4 @@ The Rails Girls page needs
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+We are using Codeship(Codeship is a Continuous Integration Platform in the cloud.) https://codeship.com/
