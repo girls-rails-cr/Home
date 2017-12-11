@@ -5,7 +5,7 @@
   <div class="small-7 columns">
     <ul class="menu align-right">
       <% if current_user %>
-        <li>Hola <strong><%= current_user.email %></strong>.</li>
+        <li><strong><%= current_user.email %></strong>.</li>
         <li><%= link_to 'Editar Perfil', edit_user_registration_path, :class => 'navbar-link' %> </li>
         <li><%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
       <% end %>
