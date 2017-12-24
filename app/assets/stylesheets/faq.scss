@@ -1,0 +1,63 @@
+/*--------------------*/
+/* FAQ */
+/*--------------------*/
+
+#mu-faq {
+	background-color: #f8f8f8;
+	display: inline;
+	float: left;
+	position: relative;
+	width: 100%;
+}
+
+.mu-faq-area {
+	display: inline;
+	float: left;
+	padding: 150px 0;
+	width: 100%;
+}
+
+.mu-faq-content {
+	display: inline;
+	float: left;
+	width: 100%;
+	text-align: center;
+	padding: 0 150px;
+	margin-top: 50px;
+}
+
+.mu-faq-content .panel-default {
+	border-radius: 0;
+	border-color: #fff;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.06);
+}
+
+.mu-faq-content .panel-default > .panel-heading {
+	color: #333;
+	background-color: #fff;
+	border-color: #ddd;
+	padding: 0;
+
+}
+
+.mu-faq-content .panel-default > .panel-heading + .panel-collapse > .panel-body {
+	text-align: left;
+}
+
+
+.mu-faq-content .panel-title {
+	text-align: left;
+	font-weight: 300;
+}
+
+.mu-faq-content .panel-title a {
+	display: block;
+	padding: 12px 15px;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.mu-faq-content .panel-title a>span {
+	margin-right: 5px;
+}

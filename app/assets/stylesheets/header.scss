@@ -1,0 +1,179 @@
+
+/*--------------------*/
+/* HEADER */
+/*--------------------*/
+.mu-logo-area img{
+	width: 200px;
+}
+#mu-hero {
+	background-image: url('lab101.jpg');
+	display: inline;
+	float: left;
+	width: 100%;
+	background-position: center center;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+.mu-hero-overlay {
+	display: inline;
+	float: left;
+	opacity: 0.94;
+	width: 100%;
+}
+
+.mu-logo-area {
+	display: inline;
+	float: left;
+	text-align: center;
+	width: 100%;
+}
+
+.mu-logo {
+	font-size: 35px;
+	font-family: 'Montserrat', sans-serif;
+	display: inline-block;
+	font-weight: 600;
+	background: #fff;
+	padding: 5px 20px;
+	margin-bottom: 30px;
+}
+
+
+.mu-menu-btn {
+	position: fixed;
+	right: 15%;
+	top: 50px;
+	color: #fff;
+	font-size: 25px;
+	border: 2px solid #fff;
+	padding: 5px 14px;
+	z-index: 999;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.mu-menu-btn:hover,
+.mu-menu-btn:focus {
+	border: 2px solid #fff;
+}
+
+
+
+/*=== Featured section ===*/
+
+.mu-hero-featured-area {
+	display: inline;
+	float: left;
+	padding: 60px 0 150px;
+	width: 100%;
+}
+
+.mu-hero-featured-content {
+	display: inline;
+	float: right;
+	margin-top: 50px;
+	text-align: center;
+	width: 100%;
+}
+
+.mu-hero-featured-content h1 {
+	font-size: 45px;
+	color: #fff;
+	font-weight: 300;
+	margin-bottom: 15px;
+}
+
+
+.mu-hero-featured-content h2 {
+	color: #fff;
+	font-size: 25px;
+	font-weight: 300;
+}
+
+.mu-event-date-line {
+	background-color: #fff;
+	color: #333;
+	padding: 5px 10px;
+	display: inline-block;
+	margin-top: 10px;
+	font-weight: 600;
+}
+
+.mu-event-counter-area {
+	display: inline;
+	float: left;
+	margin-top: 50px;
+	width: 100%;
+}
+
+#mu-event-counter{
+	display: inline;
+	float: left;
+	width: 100%;
+	text-align: center;
+}
+
+.mu-event-counter-block {
+	border: 2px solid #fff;
+	border-radius: 50%;
+	display: inline-block;
+	height: 180px;
+	width: 180px;
+	text-align: center;
+	font-size: 22px;
+	color: #fff;
+	margin: 0 20px;
+	font-weight: 300;
+}
+
+.mu-event-counter-block span {
+	display: block;
+	font-size: 40px;
+	font-weight: 700;
+	padding-top: 56px;
+	line-height: 40px;
+}
+
+/*--------------------*/
+/* MENU */
+/*--------------------*/
+
+#mu-hero .navbar-default {
+	background-color: #fff;
+	border-color: #e7e7e7;
+	padding: 5px 0;
+}
+
+.mu-navbar {
+	top: -150px;
+	transition: all 0.5s;
+}
+
+.mu-nav-show {
+    top: 0px;
+    position: fixed;
+    z-index: 9999;
+}
+
+#mu-hero .navbar-default .navbar-brand {
+	padding: 15px 15px;
+	font-size: 28px;
+	line-height: 20px;
+}
+
+.mu-navbar .mu-menu li a {
+	color: #333;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:focus, 
+.navbar-default .navbar-nav > .active > a:hover {
+	color: #fff;
+}
+

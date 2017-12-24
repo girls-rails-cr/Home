@@ -1,0 +1,150 @@
+
+/*--------------------*/
+/* EVENT SCHEDULE */
+/*--------------------*/
+
+#mu-schedule {
+	background-color: #f8f8f8;
+	display: inline;
+	float: left;
+	width: 100%;
+}
+
+.mu-schedule-area {
+	display: inline;
+	float: left;
+	padding: 100px 0;
+	width: 100%;
+}
+
+.mu-schedule-content-area  {
+	display: inline;
+	float: left;
+	margin-top: 50px;
+	width: 100%;
+}
+
+.mu-schedule-menu {
+	text-align: center;
+	border: none;
+}
+
+
+.mu-schedule-menu li {
+	float: none;
+	display: inline-block;
+}
+
+.mu-schedule-menu li a {
+	border-radius: 0;
+	margin: 0 10px;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.mu-schedule-menu li a:hover,
+.mu-schedule-menu li a:focus,
+.mu-schedule-menu li.active a,
+.mu-schedule-menu li.active a:hover,
+.mu-schedule-menu li.active a:focus {
+	color: #fff;
+}
+
+.mu-schedule-content{
+	margin-top: 50px;
+}
+
+.mu-event-timeline ul li {
+	list-style-type: none;
+	position: relative;
+	width: 2px;
+	margin: 0 auto;
+	padding-top: 50px;
+	background-color: #ddd;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.mu-event-timeline ul li::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 70px;
+	transform: translateX(-50%);
+	height: 24px;
+	width: 24px;
+	border-radius: 50%;
+	background: inherit;
+}
+
+
+.mu-event-timeline ul li .mu-single-event {
+	background-color: #fff;
+	-webkit-box-shadow: 0 0 16px 0 rgba(32,32,47,0.16);
+	-moz-box-shadow: 0 0 16px 0 rgba(32,32,47,0.16);
+	box-shadow: 0 0 16px 0 rgba(32,32,47,0.16);
+	position: relative;
+	top: 0;
+	width: 400px;
+	padding: 15px;
+	text-align: left;
+}
+
+.mu-event-timeline ul li:nth-child(2n) .mu-single-event {
+	left: 50px;
+}
+
+.mu-event-timeline ul li:nth-child(2n+1) .mu-single-event {
+	left: -450px;
+	text-align: right;
+}
+
+.mu-event-timeline ul li .mu-single-event img {
+	height: 80px;
+	width: 80px;
+	float: left;
+	border-radius: 50%;
+	margin-right: 15px;
+}
+
+.mu-event-timeline ul li:nth-child(2n+1) .mu-single-event img {
+	float: right;
+	margin-right: 0;
+	margin-left: 15px;
+}
+
+.mu-event-timeline ul li .mu-single-event::before {
+	content: '';
+	position: absolute;
+	top: 23px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+}
+
+.mu-event-timeline ul li:nth-child(2n+1) .mu-single-event::before {
+	right: -15px;
+	border-width: 8px 0 8px 16px;
+	border-color: transparent transparent transparent #fff;
+}
+
+.mu-event-timeline ul li:nth-child(2n) .mu-single-event::before {
+	left: -16px;
+	border-width: 8px 16px 8px 0;
+	border-color: transparent #fff transparent transparent;
+}
+
+.mu-event-timeline ul li .mu-single-event h3 {
+	margin-bottom: 5px;
+	font-size: 16px;
+}
+
+.mu-event-timeline ul li .mu-single-event p {
+	margin-bottom: 5px;
+}
+
+.mu-event-timeline ul li .mu-single-event span {
+	font-size: 12px;
+}
