@@ -1,36 +1,104 @@
 $primary-color: #299a53;
 
 input {
-   &[type=checkbox]{
-      opacity: 0;
-      position: absolute;
+  &[type=checkbox]{
+    opacity: 0;
+    position: absolute;
 
-      &:checked + label:before {
-         background: $primary-color;
-      }
+    &:checked + label:before {
+      background: $primary-color;
+    }
 
-      & + label:before {
-         display: inline-block;
-         text-align: center;
-         line-height: 1;
+    & + label:before {
+      display: inline-block;
+      text-align: center;
+      line-height: 1;
 
-         border: 0.0625rem solid $primary-color;
-         width: 1.5rem;
-         height: 1.5rem;
-         margin-right: 0.5rem;
+      border: 0.0625rem solid $primary-color;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 0.5rem;
 
-         font-size: 0.875rem;
-         color: white;
-         background: white;
-      }
-   }
+      font-size: 0.875rem;
+      color: white;
+      background: white;
+    }
+  }
 
-   &[type=checkbox] {
-      & + label:before {
-         content: "\2713";
-         padding-right: 1px;
-         padding-top: 5px;
-         border-radius: 0.125rem;
-      }
-   }
+  &[type=checkbox] {
+    & + label:before {
+      content: "\2713";
+      padding-right: 1px;
+      padding-top: 5px;
+      border-radius: 0.125rem;
+    }
+  }
+}
+
+@media (min-width: 992px){
+  .typo-line{
+    padding-left: 140px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .typo-line .category{
+    transform: translateY(-50%);
+    top: 50%;
+    left: 0px;
+    position: absolute;
+  }
+}
+
+.all-icons [class*="pe-"]{
+  font-size: 40px;
+}
+.all-icons input{
+  border: 0;
+}
+.all-icons .font-icon-detail{
+  text-align: center;
+  padding: 45px 0px 30px;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  margin: 15px 0;
+}
+.all-icons .font-icon-detail input{
+  margin: 25px auto 0;
+  width: 100%;
+  text-align: center;
+  display: block;
+  color: #aaa;
+  font-size: 13px;
+}
+
+#map{
+  position:relative;
+  width:100%;
+  height: calc(100% - 60px);
+}
+
+.places-buttons .btn{
+  margin-bottom: 30px
+}
+.sidebar .nav > li.active-pro{
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+}
+.sidebar .nav > li.active-pro a{
+  background: rgba(255, 255, 255, 0.14);
+  opacity: 1;
+  color: #FFFFFF;
+}
+
+.table-upgrade td:nth-child(2),
+.table-upgrade td:nth-child(3){
+  text-align: center;
+}
+
+@media all and (max-width: 991px)  {
+  .sidebar .nav > li.active-pro{
+    position: initial;
+  }
 }

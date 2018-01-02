@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: subscribers
+#
+#  id               :integer          not null, primary key
+#  name             :string
+#  email            :string
+#  source           :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  level_knowledge  :integer
+#  phone_number     :string
+#  registered       :boolean
+#  confirmed        :boolean
+#  second_confirmed :boolean
+#  comments         :string
+#  work             :string
+#
+
 class Subscriber < ApplicationRecord
   validates_format_of :email, with: Devise.email_regexp
   validates :name, presence: { message: 'Por favor ingresa tu nombre.' }

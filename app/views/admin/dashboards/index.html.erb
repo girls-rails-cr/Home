@@ -1,89 +1,75 @@
 <div class="row">
-  <div class="small-5 large-centered columns">
-    <h2>Rails Girls Admin</h2>
-  </div>
-  <div class="small-7 columns">
-    <ul class="menu align-right">
-      <% if current_user %>
-        <li><strong><%= current_user.email %></strong>.</li>
-        <li><%= link_to 'Editar Perfil', edit_user_registration_path, :class => 'navbar-link' %> </li>
-        <li><%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'navbar-link' %></li>
-      <% end %>
-    </ul>
-  </div>
-</div>
-<div class="admin-container">
-  <div class="row"><div class="small-8 large-centered columns"> <h4> <%= @subscribers.size %> Suscriptores</h4> </div></div>
-  <div class="row"><div class="small-8 large-centered columns"> <h4> <%= confirmed =%> Usuarios Confirmados</h4> </div></div>
-    <div class="row"><div class="small-8 large-centered columns"> <h4> <%= registred =%> Usuarios Registrados </h4> </div></div>
-    <div class="row"><div class="small-8 large-centered columns"> <h4> <%= second_confirmed =%> Usuarios Registrados El día Domingo </h4> </div></div>
-</div>
-
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Email</th>
-      <th>Source</th>
-      <th>Nivel</th>
-      <th># telefono</th>
-      <td>Confirmed</td>
-      <td>Check In</td>
-      <th>Second Check In </th>
-      <th>Comments</th>
-      <th>Work?</th>
-      <td>Actions</td>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @subscribers.each do |subscriber| %>
-    <tr>
-      <td><%= subscriber.name %></td>
-      <td><%= subscriber.email %></td>
-      <td><%= subscriber.source %></td>
-      <td><%= subscriber.level_knowledge %></td>
-      <td><%= subscriber.phone_number %></td>
-      <td>
-        <div class="check-link">
-          <%= check_box_tag "status_confirmed#{subscriber.id}", subscriber.id, subscriber.confirmed?,
-            data: {
-                remote: true,
-                url: admin_update_confirmed_path(subscriber.id),
-                method: :put
-              } %>
-              <label for="status_confirmed<%=subscriber.id%>"></label>
-        </div>
-      </td>
-      <td>
-        <div class="check-link">
-          <%= check_box_tag "status_registered#{subscriber.id}", subscriber.id, subscriber.registered?,
-            data: {
-                remote: true,
-                url: admin_update_registered_path(subscriber.id),
-                method: :put
-              } %>
-              <label for="status_registered<%=subscriber.id%>"></label>
-        </div>
-
-      </td>
-      <td>
-      <div class="check-link">
-          <%= check_box_tag "second_status_registered#{subscriber.id}", subscriber.id, subscriber.second_confirmed,
-            data: {
-                remote: true,
-                url: admin_second_update_confirmed_path(subscriber.id),
-                method: :put
-              } %>
-              <label for="second_status_registered<%=subscriber.id%>"></label>
+  <div class="col-md-12">
+    <div class="card">
+      <div class="header text-center">
+        <h4 class="title">Rails Girls Admin</h4>
+        <p class="category"><%= @subscribers.size %>
+          Suscriptores,
+          <%= confirmed =%>
+          Usuarios Confirmados,
+          <%= registred =%>
+          Usuarios Registrados,
+          <%= second_confirmed =%>
+          Usuarios Registrados El día Domingo
+        </p>
+        <br>
       </div>
-      </td>
-      <%= form_with(url: admin_update_details_path(subscriber.id), local: true) do |form| %>
-        <td><%= form.text_field :comments, id: :comments, value: subscriber.comments %></td>
-        <td><%= form.text_field :work, id: :work, value: subscriber.work %></td>
-        <td><%= form.submit "Guardar" %></td>
-      <% end  %>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+      <div class="content table-responsive table-full-width">
+        <table id="users" class="table table-hover">
+          <thead>
+            <tr>
+              <th >Nombre</th>
+              <th >Email</th>
+              <th>Source</th>
+              <th>Nivel</th>
+              <th># Telefono</th>
+              <td>Confirmed</td>
+              <td>Check In</td>
+              <th>Second Check In </th>
+              <th>Comments</th>
+              <th>Work?</th>
+              <td>Actions</td>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @subscribers.each do |subscriber| %>
+            <tr>
+              <td><%= subscriber.name %></td>
+              <td><%= subscriber.email %></td>
+              <td><%= subscriber.source %></td>
+              <td><%= subscriber.level_knowledge %></td>
+              <td><%= subscriber.phone_number %></td>
+              <td>
+                <div class="check-link">
+                  <%= check_box_tag "status_confirmed#{subscriber.id}", subscriber.id, subscriber.confirmed?, data: { remote: true, url: admin_update_confirmed_path(subscriber.id), method: :put } %>
+                  <label for="status_confirmed<%=subscriber.id%>"></label>
+                </div>
+              </td>
+              <td>
+                <div class="check-link">
+                  <%= check_box_tag "status_registered#{subscriber.id}", subscriber.id, subscriber.registered?, data: { remote: true, url: admin_update_registered_path(subscriber.id), method: :put } %>
+                  <label for="status_registered<%=subscriber.id%>"></label>
+                </div>
+
+              </td>
+              <td>
+                <div class="check-link">
+                  <%= check_box_tag "second_status_registered#{subscriber.id}", subscriber.id, subscriber.second_confirmed, data: { remote: true, url: admin_second_update_confirmed_path(subscriber.id), method: :put } %>
+                  <label for="second_status_registered<%=subscriber.id%>"></label>
+                </div>
+              </td>
+              <%= form_with(url: admin_update_details_path(subscriber.id), local: true) do |form| %>
+              <td><%= form.text_field :comments, id: :comments, value: subscriber.comments %></td>
+              <td><%= form.text_field :work, id: :work, value: subscriber.work %></td>
+              <td><%= form.submit "Guardar" %></td>
+              <% end  %>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>

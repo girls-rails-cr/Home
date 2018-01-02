@@ -12,6 +12,7 @@ gem 'rails', '~> 5.1.3'
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
+
 gem 'bootstrap'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -51,6 +52,8 @@ gem 'metamagic'
 gem 'delayed_job_active_record'
 
 gem "font-awesome-rails"
+#This gem provides a simple and extremely flexible way to upload files from Ruby applications. Read more here: https://github.com/carrierwaveuploader/carrierwave
+gem 'carrierwave', '~> 1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -68,6 +71,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener_web'
+  # Add a comment summarizing the current schema to the top or bottom of each, Read more here: https://github.com/ctran/annotate_models
+  gem 'annotate'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
