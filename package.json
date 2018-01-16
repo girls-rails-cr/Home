@@ -2,8 +2,10 @@
   "name": "home",
   "private": true,
   "dependencies": {
+    "bootstrap": "4.0.0-alpha.6",
     "foundation-sites": "^6.4.3",
     "jquery": "^3.2.1",
-    "jquery-ujs": "^1.2.2"
+    "jquery-ujs": "^1.2.2",
+    "popper.js": "^1.12.9"
   }
 }

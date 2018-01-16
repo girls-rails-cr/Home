@@ -12,6 +12,8 @@
 //
 //= require jquery/dist/jquery
 //= require jquery-ujs/src/rails
+//= require tether/dist/js/tether
+//= require bootstrap/dist/js/bootstrap
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
