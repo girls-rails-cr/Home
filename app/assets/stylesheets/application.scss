@@ -11,10 +11,12 @@
 * It is generally better to create a new file per style scope.
 *
 *= require bootstrap/dist/css/bootstrap
+*= require font-awesome
 *= require_tree .
 *= require_self
 */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+
 @import 'color';
 @import 'global';
 @import 'responsive';
@@ -25,3 +27,5 @@
 @import 'faq';
 @import 'sponsors';
 @import 'footer';
+@import 'contact';
+@import 'default_theme';
