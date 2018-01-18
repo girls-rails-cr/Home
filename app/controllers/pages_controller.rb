@@ -14,4 +14,10 @@ class PagesController < ApplicationController
   def sponsors
 
   end
+  def schedule
+
+  end
+  def speakers
+
+  end
 end

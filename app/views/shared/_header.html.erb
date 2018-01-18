@@ -11,37 +11,29 @@
         <!-- Logo -->
         <a class="navbar-brand" href="">Rails Grils CR</a>
 
+
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="header-list">
         <ul class="nav navbar-nav mu-menu navbar-right">
           <li>
-            <a href="#mu-hero">Home</a>
+            <%= link_to 'Home', index_page_url %>
           </li>
           <li>
-            <a href="#mu-about">About Us</a>
+            <%= link_to 'About', about_page_url %>
           </li>
           <li>
-            <a href="#mu-schedule">Schedule</a>
+            <%= link_to 'Schedule', schedule_page_url %>
           </li>
           <li>
-            <a href="#mu-speakers">Speakers</a>
+            <%= link_to 'Speakers', speakers_page_url %>
           </li>
           <li>
-            <a href="#mu-pricing">Price</a>
+            <%= link_to 'Sponsors', sponsors_page_url %>
           </li>
           <li>
-            <a href="#mu-register">Register</a>
-          </li>
-          <li>
-            <a href="#mu-sponsors">Sponsors</a>
-          </li>
-          <li>
-            <a href="#past-mu-sponsors">Past Sponsors</a>
-          </li>
-          <li>
-            <a href="#mu-contact">Contact</a>
+            <%= link_to 'Contact', contact_page_url %>
           </li>
         </ul>
       </div>
@@ -73,7 +65,9 @@
             <p class="mu-event-date-line">9 y 10 de Septiembre 2017</p>
 
             <div class="mu-event-counter-area">
-              <div id="mu-event-counter"></div>
+              <div id="mu-event-counter">
+
+              </div>
             </div>
 
           </div>
