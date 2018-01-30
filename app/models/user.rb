@@ -32,7 +32,7 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy, inverse_of: :user
 
   scope :admins, -> { where(role: 1) }
-  scope :speakers, -> { admins.where(role: 3) }
+  scope :speakers, -> { where(role: 3) }
 
   delegate :full_name, to: :profile
 

@@ -53,11 +53,7 @@ module Admin
 
     def speaker_params
       params.require(:user).permit(:role, :password, :email,
-                                    profile_attributes: [:id, :first_name,
-                                    :avatar, :avatar_cache, :last_name,
-                                    :username, :company, :address, :fb_link,
-                                    :twitter_link, :linkedin, :about_me,
-                                    :career, :_destroy])
+                                    profile_attributes: [:id, :first_name, :avatar, :career, :avatar_cache, :last_name, :username, :company, :address, :fb_link, :twitter_link, :linkedin, :about_me, :_destroy])
     end
   end
 end
