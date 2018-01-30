@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="header text-center">
+        <h4 class="title">Rails Girls Admin</h4>
+        <p class="category"></p>
+        <br>
+      </div>
+      <div class="content table-responsive table-full-width">
+        <% if @admins.present? %>
+            <table id="admins" class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Photo</th>
+                  <th>Name/Bio</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @admins.each do |admin| %>
+                <tr>
+                  <td class="row-img" style="width:  150px;"><%=  image_tag admin&.profile&.avatar if admin&.profile&.avatar %></td>
+                  <td WIDTH="800"> <strong><%= admin.full_name  if admin&.profile %> </strong> </br> <%= admin&.profile&.about_me %></td>
+                  <td><%= link_to 'Edit', edit_admin_admin_path(admin) %>/<%= link_to 'Destroy', admin_admin_path(admin), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+        <% else %>
+          <p>You don't have any speakers yet.</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

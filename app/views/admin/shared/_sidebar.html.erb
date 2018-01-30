@@ -1,0 +1,52 @@
+<div class="sidebar" data-color="pink" data-image="<%= image_path("sidebar-5.jpg") %>">
+  <div class="sidebar-wrapper">
+    <div class="logo">
+      <%= link_to "Rails Girls Admin", admin_root_path, class: 'simple-text' %>
+    </div>
+
+    <ul class="nav">
+      <li>
+        <%= link_to  admin_root_path do  %>
+          <i class="pe-7s-graph"></i>
+          <p>Dashboard</p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to  admin_events_path do  %>
+          <i class="pe-7s-rocket"></i>
+          <p>Events</p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_users_path do %>
+          <i class="pe-7s-smile"></i>
+          <p>Speakers</p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_subscribers_path do %>
+          <i class="pe-7s-users"></i>
+          <p>Subcribers</p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_sponsors_path do %>
+          <i class="pe-7s-cash"></i>
+          <p>Sponsors</p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to admin_admins_path do %>
+          <i class="pe-7s-id"></i>
+          <p>Admins</p>
+        <% end %>
+      </li>
+      <li class="active active-pro">
+        <%= link_to  edit_admin_profile_path do  %>
+          <i class="pe-7s-user"></i>
+          <p>User Profile</p>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

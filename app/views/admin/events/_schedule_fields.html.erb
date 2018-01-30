@@ -1,0 +1,22 @@
+<div class="nested-fields">
+  <div class="form-group">
+    <%= f.text_field :name, required: true,
+    autofocus: true, placeholder: "Sunday",
+    class: "form-control"%>
+  </div>
+  <div id="schedule_details_form">
+    <%= f.fields_for :schedule_details do |schedule_detail_form| %>
+    <%= render partial: 'admin/events/schedule_detail_fields',
+               locals: { f: schedule_detail_form } %>
+
+    <% end %>
+  </div>
+  <%= link_to_add_association "Add Activity Detail", f, :schedule_details,
+      partial: 'admin/events/schedule_detail_fields', class: "button add-activity-detail",
+      :"data-association-insertion-node" => "#schedule_details_form",
+      :"data-association-insertion-method" => :append %>
+  <br>
+  <br>
+  <%= link_to_remove_association "Remove Day", f %>
+</div>
+<br>

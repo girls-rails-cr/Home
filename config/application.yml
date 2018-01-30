@@ -1,0 +1,13 @@
+default: &default
+  AWS_ACCESS_KEY:
+  AWS_SECRET_ACCESS_KEY:
+  AWS_BUCKET_NAME: 
+development:
+  <<: *default
+  DATABASE_URL: postgres://cuoqvdrdkkewwe:5144a995c1e3d7a57f7de07f2f6c4fe0d141efd3e2b9eada9159b34a197b5332@ec2-23-21-184-113.compute-1.amazonaws.com:5432/d9089on1qghoba
+
+test:
+  <<: *default
+
+production:
+  <<: *default

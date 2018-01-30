@@ -3,12 +3,16 @@ module Admin
     layout 'admin'
 
     before_action :authenticate_user!
-    before_action :admin_filter!
+    before_action :authenticate_admin
 
     private
-      def admin_filter!
-        redirect_to root_path unless current_user.admin?
-      end
-      layout 'admin'
+    def authenticate_admin
+      redirect_to '/', alert: 'Not authorized.' unless current_user && access_rule
+    end
+
+    def access_rule
+      current_user.try(:admin?)
+    end
+    layout 'admin'
   end
 end

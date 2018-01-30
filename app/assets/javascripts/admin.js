@@ -1,29 +1,13 @@
 //= require jquery/dist/jquery
 //= require jquery-ujs/src/rails
-//= require foundation-sites/dist/js/foundation
-//= require_tree ./admin
+//= require popper
+//= require bootstrap/dist/js/bootstrap
+//= require Chart.bundle
+//= require chartkick
 //= require turbolinks
+//= require cocoon
+//= require_tree ./admin
 
 $(document).on('turbolinks:load', function() {
-  $(document).foundation();
+  $('#event-start-time').datetimepicker();
 });
-
-$(document).on("click", "#export-btn", function () {
-  export_list();
-});
-
-function export_list() {
- $.ajax({
-     type: "POST",// GET in place of POST
-     contentType: "application/json; charset=utf-8",
-     url: "/admin/export_csv",
-     dataType: "json",
-     success: function (result) {
-        //do somthing here
-        window.alert("success!!");
-     },
-     error: function (){
-        window.alert("something wrong!");
-     }
-   });
-}

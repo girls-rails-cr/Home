@@ -1,0 +1,10 @@
+<div class="nested-fields col-md-3">
+  <div class="form-group">
+    <div class="field view-img">
+      <%= f.label :img, "Upload Image", class: "upload-avatar" %><br>
+      <%= f.file_field :img, class: 'load-image'%>
+      <%= image_tag(f&.object.img.url) if f&.object&.img&.present? %>
+    </div>
+  </div>
+  <%= link_to_remove_association "Remove Image", f %>
+</div>
