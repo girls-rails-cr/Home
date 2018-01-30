@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="header text-center">
+        <h4 class="title">Rails Girls Admin</h4>
+        <p class="category"></p>
+        <br>
+      </div>
+      <div class="content table-responsive table-full-width">
+        <% if @events.present? %>
+            <table id="events" class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Background Image</th>
+                  <th>Title/Description</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @events.each do |event| %>
+                <tr>
+                  <td class="row-img" style="width:  150px;"><%= image_tag event&.background_image.thumb.url %></td>
+                  <td WIDTH="800"> <strong><%= event.title %> </strong> </br> <%= event.description %></td>
+                  <td><%= link_to 'Edit', edit_admin_event_path(event) %>/<%= link_to 'Destroy', admin_event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+        <% else %>
+          <p>You don't have any events yet.</p>
+        <% end %>
+        <%= link_to 'New Admin Event', new_admin_event_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>

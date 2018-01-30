@@ -1,22 +1,20 @@
 # Rails Girls Costa Rica
 
-The Rails Girls page needs
 
-* Ruby version
-  ```2.4.1```
-
-* System dependencies
-
+System Dependencies
+-------------------
+- Ruby 2.5.0 (install with [rvm](https://rvm.io/))
+- Rails 5.1.4
+- Bundler (`gem install bundler`)
+- Rubygems (`bundle install/update`)
+- PostgreSQL (`ENV VAR`)
 
 * Configuration
   Using figaro take a look https://github.com/laserlemon/figaro
 
-* Database creation
- ``` rails db:create```
 * Database initialization
-  ```rails db:migrate```
-* How to run the test suite
+  ```use <%= ENV["DATABASE_URL"] %>```
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+* Deployment instructions We are using Codeship(Codeship is a Continuous Integration Platform in the cloud.) https://codeship.com/

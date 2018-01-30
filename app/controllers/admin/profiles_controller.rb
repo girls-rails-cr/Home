@@ -9,7 +9,7 @@ module Admin
     def update
       if @user.update(user_params)
         bypass_sign_in(@user)
-        redirect_to profile_path
+        redirect_to edit_admin_profile_path
       else
         render :edit
       end
@@ -35,7 +35,7 @@ module Admin
     def user_params
       accessible = [ :email ]
       accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
-      params.require(:user).permit(accessible, profile_attributes: [:id, :first_name, :avatar, :last_name, :_destroy])
+      params.require(:user).permit(accessible, profile_attributes: [:id, :first_name, :avatar, :career, :avatar_cache, :last_name, :username, :company, :address, :fb_link, :twitter_link, :linkedin, :about_me, :_destroy])
     end
   end
 end

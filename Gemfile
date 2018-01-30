@@ -7,13 +7,14 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.3'
+gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 
-gem 'bootstrap'
+
+#gem 'bootstrap'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -54,11 +55,26 @@ gem 'delayed_job_active_record'
 gem "font-awesome-rails"
 #This gem provides a simple and extremely flexible way to upload files from Ruby applications. Read more here: https://github.com/carrierwaveuploader/carrierwave
 gem 'carrierwave', '~> 1.0'
+#Cocoon makes it easier to handle nested forms. Read more here: https://github.com/nathanvda/cocoon
+gem "cocoon"
+#This gem provides popper.js assets as a Ruby gem. Read more here: https://github.com/glebm/popper_js-rubygem
+gem 'popper_js'
+# Module for the 'fog' gem to support Amazon Web Services http://aws.amazon.com/  Read more here: https://github.com/fog/fog-aws
+gem 'fog-aws', require: 'fog/aws'
+# I was using RMagick and loving it, but it was eating up huge amounts of memory. Read more here: https://github.com/minimagick/minimagick
+gem "mini_magick"
+# Create beautiful JavaScript charts with one line of Ruby. No more fighting with charting libraries.  Read more here: https://github.com/ankane/chartkick
+gem "chartkick"
+#The simplest way to group temporal data. Read more here: https://github.com/ankane/groupdate
+gem 'groupdate'
+gem 'active_median'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'brakeman', :require => false
+  # Fast debugging with Pry. (https://github.com/deivid-rodriguez/pry-byebug)
+  gem 'pry'
 end
 
 group :development do
@@ -73,6 +89,8 @@ group :development do
   gem 'letter_opener_web'
   # Add a comment summarizing the current schema to the top or bottom of each, Read more here: https://github.com/ctran/annotate_models
   gem 'annotate'
+  #RuboCop is a Ruby static code analyzer. Out of the box it will enforce many of the guidelines outlined in the community, Read more here: https://github.com/bbatsov/rubocop
+  gem 'rubocop', require: false
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

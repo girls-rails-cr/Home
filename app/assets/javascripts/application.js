@@ -2,7 +2,7 @@
 //= require jquery-ujs/src/rails
 //= require jquery3
 //= require popper
-//= require bootstrap-sprockets
+//= require bootstrap/dist/js/bootstrap
 //= require_tree .
 //= require turbolinks
 

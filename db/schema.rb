@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180102015026) do
+ActiveRecord::Schema.define(version: 20180123142430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,13 +30,36 @@ ActiveRecord::Schema.define(version: 20180102015026) do
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
+  create_table "event_attachments", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.string "img"
+    t.string "attach"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_attachments_on_event_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "description"
+    t.text "venue_description"
+    t.datetime "start_time"
+    t.string "video_url"
+    t.string "venue_short_description"
+    t.string "map_url"
+    t.string "background_image"
+    t.integer "status", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "first_name"
     t.string "last_name"
     t.string "avatar"
     t.string "username"
-    t.string "company"
+    t.string "career"
     t.string "address"
     t.string "fb_link"
     t.string "twitter_link"
@@ -47,19 +70,51 @@ ActiveRecord::Schema.define(version: 20180102015026) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
+  create_table "schedule_details", force: :cascade do |t|
+    t.bigint "schedule_id", null: false
+    t.string "name"
+    t.time "date_name"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["schedule_id"], name: "index_schedule_details_on_schedule_id"
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.string "name", null: false
+    t.bigint "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_schedules_on_event_id"
+  end
+
+  create_table "sponsors", force: :cascade do |t|
+    t.string "name"
+    t.string "email_contact"
+    t.text "description"
+    t.string "company"
+    t.string "logo"
+    t.string "page_url"
+    t.integer "event_id"
+    t.integer "status", default: 1, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "subscribers", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "source"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "level_knowledge"
-    t.string "phone_number"
-    t.boolean "registered"
-    t.boolean "confirmed"
     t.boolean "second_confirmed"
     t.string "comments"
     t.string "work"
+    t.integer "event_id"
+    t.boolean "registered"
+    t.boolean "confirmed"
+    t.integer "level_knowledge"
+    t.string "phone_number"
   end
 
   create_table "users", force: :cascade do |t|
@@ -80,5 +135,8 @@ ActiveRecord::Schema.define(version: 20180102015026) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "event_attachments", "events", on_delete: :cascade
   add_foreign_key "profiles", "users", on_delete: :cascade
+  add_foreign_key "schedule_details", "schedules", on_delete: :cascade
+  add_foreign_key "schedules", "events", on_delete: :cascade
 end

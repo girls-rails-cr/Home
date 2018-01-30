@@ -12,34 +12,34 @@
         <% end %>
       </li>
       <li>
-        <a href="table.html">
-          <i class="pe-7s-note2"></i>
-          <p>Table List</p>
-        </a>
+        <%= link_to  admin_events_path do  %>
+          <i class="pe-7s-rocket"></i>
+          <p>Events</p>
+        <% end %>
       </li>
       <li>
-        <a href="typography.html">
-          <i class="pe-7s-news-paper"></i>
-          <p>Typography</p>
-        </a>
+        <%= link_to admin_users_path do %>
+          <i class="pe-7s-smile"></i>
+          <p>Speakers</p>
+        <% end %>
       </li>
       <li>
-        <a href="icons.html">
-          <i class="pe-7s-science"></i>
-          <p>Icons</p>
-        </a>
+        <%= link_to admin_subscribers_path do %>
+          <i class="pe-7s-users"></i>
+          <p>Subcribers</p>
+        <% end %>
       </li>
       <li>
-        <a href="maps.html">
-          <i class="pe-7s-map-marker"></i>
-          <p>Maps</p>
-        </a>
+        <%= link_to admin_sponsors_path do %>
+          <i class="pe-7s-cash"></i>
+          <p>Sponsors</p>
+        <% end %>
       </li>
       <li>
-        <a href="notifications.html">
-          <i class="pe-7s-bell"></i>
-          <p>Notifications</p>
-        </a>
+        <%= link_to admin_admins_path do %>
+          <i class="pe-7s-id"></i>
+          <p>Admins</p>
+        <% end %>
       </li>
       <li class="active active-pro">
         <%= link_to  edit_admin_profile_path do  %>

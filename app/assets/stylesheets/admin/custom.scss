@@ -8,3 +8,24 @@
     padding-top: 50px;
   }
 }
+label.upload-avatar {
+  color: #545454;
+  cursor: pointer;
+}
+input[type="file"]{
+  visibility: hidden;
+}
+.view-img{img {width: 100px; height: 100px;}}
+
+#preview-images {
+  margin-right: 10px;
+  img {width: 100px; height: 100px;}
+}
+#preview-image {
+  img {width: 100px; height: 100px;}
+}
+.row-img{
+  img {width: 100px; height: 100px;}
+}
+.sd-text-right{left: 20px;}
+.add-activity-detail{left: 20px;position: relative;}

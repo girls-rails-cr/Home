@@ -6,7 +6,7 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
       t.string :last_name
       t.string :avatar
       t.string :username
-      t.string :company
+      t.string :career
       t.string :address
       t.string :fb_link
       t.string :twitter_link
