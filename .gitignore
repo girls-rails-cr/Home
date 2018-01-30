@@ -42,7 +42,7 @@ tmp/
 
 # Ignore application configuration
 /config/application.yml
-/config/aws.yml
+#/config/aws.yml
 
 # Temporary files of every sort
 .sass-cache/
