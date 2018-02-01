@@ -21,7 +21,7 @@
                 <% @sponsors.each do |sponsor| %>
                 <tr>
                   <td class="row-img" style="width:  150px;"><%= image_tag sponsor.logo %></td>
-                  <td WIDTH="800"> <strong><%= sponsor.name %> </strong> </br> <%= sponsor.description%></td>
+                  <td WIDTH="800"> <%= sponsor.name %> </br> <%= sponsor.description%></td>
                   <td><%= link_to 'Edit', edit_admin_sponsor_path(sponsor) %>/<%= link_to 'Destroy', admin_sponsor_path(sponsor), method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 </tr>
                 <% end %>

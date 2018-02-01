@@ -63,7 +63,7 @@
               <%= form_with(url: admin_update_details_path(subscriber.id), local: true) do |form| %>
               <td><%= form.text_field :comments, id: :comments, value: subscriber.comments %></td>
               <td><%= form.text_field :work, id: :work, value: subscriber.work %></td>
-              <td><%= form.submit "Guardar" %></td>
+              <td><%= form.submit "Save", class: "btn btn-primary"%>  <%= link_to 'Edit', edit_admin_subscriber_path(subscriber) %>/<%= link_to 'Destroy', admin_subscriber_path(subscriber), method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <% end  %>
             </tr>
             <% end %>

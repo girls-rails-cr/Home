@@ -72,7 +72,7 @@ module Admin
     private
 
     def set_subscriber
-      @subscriber = Subcriber.find_by_id(params[:id])
+      @subscriber = Subscriber.find_by_id(params[:id])
     end
 
     def subscriber_params
