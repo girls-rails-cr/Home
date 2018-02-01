@@ -3,10 +3,10 @@
        description: "En su primer versión, durante dos días de nuestro taller gratuito, estaremos entrando al mágico mundo de la construcción de aplicaciones web Railsmocionate y construye cosas increíbles!",
        keywords: %w(Rails Girls Costa Rica ruby)
 %>
-<%= render 'shared/header'  %>
-<%= render 'shared/about'  %>
-<%= render 'shared/faq'  %>
-<%= render 'shared/schedule'  %>
+<%= render 'shared/header' , locals: {event: @event} %>
+<%= render 'shared/about' , locals: {event: @event}  %>
+<%= render 'shared/faq' , locals: {event: @event}  %>
+<%= render 'shared/schedule', locals: {event: @event}  %>
 <%= render 'shared/sponsors'  %>
 <%= render 'shared/past_sponsors'  %>
 <%= render 'shared/footer'  %>
