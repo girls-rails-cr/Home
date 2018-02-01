@@ -21,10 +21,8 @@ module Admin
       respond_to do |format|
         if @sponsor.save
           format.html { redirect_to admin_sponsors_path, notice: 'Sponsor was successfully created.' }
-          format.json { render :show, status: :created, location: @sponsor }
         else
           format.html { render :new }
-          format.json { render json: @sponsor.errors, status: :unprocessable_entity }
         end
       end
     end
@@ -33,10 +31,8 @@ module Admin
       respond_to do |format|
         if @sponsor.update(sponsor_params)
           format.html { redirect_to admin_sponsors_path, notice: 'Sponsor was successfully updated.' }
-          format.json { render :show, status: :ok, location: @sponsor }
         else
           format.html { render :edit }
-          format.json { render json: @sponsor.errors, status: :unprocessable_entity }
         end
       end
     end
@@ -45,7 +41,6 @@ module Admin
       @sponsor.destroy
       respond_to do |format|
         format.html { redirect_to admin_sponsors_path, notice: 'Sponsor was successfully destroyed.' }
-        format.json { head :no_content }
       end
     end
 

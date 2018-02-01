@@ -77,6 +77,10 @@ function load_datatables() {
   $('#admins').DataTable({
     "scrollX": true
   });
+  $('#voluntaries').DataTable({
+    "scrollX": true
+  });
+
 }
 
 

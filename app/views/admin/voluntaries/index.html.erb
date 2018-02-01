@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="header text-center">
+        <h4 class="title">Rails Girls Admin</h4>
+        <p class="category"></p>
+        <br>
+      </div>
+      <div class="content table-responsive table-full-width">
+        <% if @voluntaries.present? %>
+            <table id="voluntaries" class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email/interest Area</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @voluntaries.each do |voluntary| %>
+                <tr>
+                  <td WIDTH="400"><%= voluntary.name %></td>
+                  <td WIDTH="600"> <%= voluntary.email %>  </br> <%= voluntary.interest_area %></td>
+                  <td><%= link_to 'Edit', edit_admin_voluntary_path(voluntary) %>/<%= link_to 'Destroy', admin_voluntary_path(voluntary), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+        <% else %>
+          <p>You don't have any voluntary yet.</p>
+        <% end %>
+        <%= link_to 'New Voluntary', new_admin_voluntary_path, class: "btn btn-primary"%>
+      </div>
+    </div>
+  </div>
+</div>

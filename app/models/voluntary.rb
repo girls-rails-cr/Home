@@ -1,0 +1,2 @@
+class Voluntary < ApplicationRecord
+end
