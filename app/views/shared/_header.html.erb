@@ -9,7 +9,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Logo -->
-        <a class="navbar-brand" href="">Rails Grils CR</a>
+        <a class="navbar-brand" href="">Rails Girls</a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="header-list">
@@ -18,19 +18,19 @@
             <%= link_to 'Home', index_page_url %>
           </li>
           <li>
-            <%= link_to 'About', about_page_url %>
+            <%= link_to 'Sobre nosotros', about_page_url %>
           </li>
           <li>
-            <%= link_to 'Schedule', schedule_page_url %>
+            <%= link_to 'Horario', schedule_page_url %>
           </li>
           <li>
-            <%= link_to 'Speakers', speakers_page_url %>
+            <%= link_to 'Expositores', speakers_page_url %>
           </li>
           <li>
-            <%= link_to 'Sponsors', sponsors_page_url %>
+            <%= link_to 'Patrocinadores', sponsors_page_url %>
           </li>
           <li>
-            <%= link_to 'Contact', contact_page_url %>
+            <%= link_to 'Contacto', contact_page_url %>
           </li>
         </ul>
       </div>
@@ -54,12 +54,8 @@
           <!-- End center Logo -->
           <div class="mu-hero-featured-content">
             <h1><%= @event.title%></h1>
-            <h2><%= @event.title%></h2>
+            <h2><%= @event.description%></h2>
             <p class="mu-event-date-line"><%= @event.start_time.to_s.to_date%>  & <%= @event.start_time.to_s.to_date%></p>
-            <div class="mu-event-counter-area">
-              <div id="mu-event-counter">
-              </div>
-            </div>
           </div>
         </div>
         <!-- End hero featured area -->

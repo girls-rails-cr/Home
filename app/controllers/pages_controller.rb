@@ -3,24 +3,24 @@ class PagesController < ApplicationController
 
   def index
     @subscribers = Subscriber.current_event
+    @schedules = @event.schedules
+    @sponsors = Sponsor.all
   end
   def contact
 
   end
   def faq
-
   end
   def about
 
   end
   def sponsors
-
+    @sponsors = Sponsor.all
   end
   def schedule
-
+    @schedules = @event.schedules
   end
   def speakers
-
   end
 
   private 

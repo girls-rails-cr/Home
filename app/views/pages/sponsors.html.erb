@@ -1,4 +1,4 @@
 <%= render 'shared/header'   , locals: {event: @event}%>
 <%= render 'shared/sponsors'   , locals: {event: @event}%>
-<%= render 'shared/past_sponsors'  , locals: {event: @event} %>
+<%= render 'shared/past_sponsors', locals: {sponsors: @sponsors} %>
 <%= render 'shared/footer'  %>

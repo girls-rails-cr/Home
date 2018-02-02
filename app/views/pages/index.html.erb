@@ -6,7 +6,7 @@
 <%= render 'shared/header' , locals: {event: @event} %>
 <%= render 'shared/about' , locals: {event: @event}  %>
 <%= render 'shared/faq' , locals: {event: @event}  %>
-<%= render 'shared/schedule', locals: {event: @event}  %>
-<%= render 'shared/sponsors'  %>
+<%= render 'shared/schedule',  locals: {event: @event, schedules: @schedules}  %>
+<%= render 'shared/sponsors'  , locals: {sponsors: @sponsors} %>
 <%= render 'shared/past_sponsors'  %>
 <%= render 'shared/footer'  %>
