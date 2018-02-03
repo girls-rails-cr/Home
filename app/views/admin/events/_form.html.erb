@@ -12,28 +12,36 @@
   <div class="col-md-8">
     <div class="card">
       <div class="header">
-        <h4 class="title">Event</h4>
+        <h4 class="title">Evento</h4>
       </div>
       <div class="content">
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <%= f.label :title %>
+                <%= f.label :title, "Nombre" %>
                 <%= f.text_field :title, required: true,  autofocus: true, class: "form-control"%>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
               <div class="form-group">
-                <%= f.label :venue_short_description %>
+                <%= f.label :venue_short_description, "Descripcíon corta del lugar" %>
                 <%= f.text_field :venue_short_description, class: "form-control"%>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
               <div class="form-group">
-                <%= f.label :start_time  %>
+                <%= f.label :start_time, "Fecha inicio"  %>
                 <%= f.text_field :start_time, id: 'event-start-time' %>
+              </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <%= f.label :end_date, "Hora final"  %>
+                <%= f.text_field :end_date, id: 'event-end-time' %>
               </div>
             </div>
           </div>
@@ -41,19 +49,19 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <%= f.label :video_url %>
-                <%= f.text_area :video_url, class: "form-control"%>
+                <%= f.label :video_url, "Url del video" %>
+                <%= f.text_area :video_url, size: '5x5' , class: "form-control"%>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label class="upload-avatar">
                  <%= f.file_field :background_image, accept: 'image/png,image/gif,image/jpeg', value: 'Upload', class: 'load-image'%>
-                 Upload Background Image
+                 Imagen de fondo
                </label>
                <div id="preview-image">
                  <% if @event.background_image? %>
-                    <%= image_tag(@event&.background_image.thumb.url) %>
+                    <%= image_tag(@event&.background_image) %>
                    <% end %>
                </div>
               </div>
@@ -61,24 +69,15 @@
           </div>
 
           <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <%= f.label :venue_description %>
-                <%= f.text_field :venue_description, class: "form-control"%>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <%= f.label :map_url %>
+                <%= f.label :map_url, 'Url del mapa' %>
                 <%= f.text_field :map_url, class: "form-control"%>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <%= f.label :status %>
+                <%= f.label :status, 'Estado del evento' %>
                  <%= f.select(:status, [["Active", "active"], ["Inactive", "inactive"]], {}, {class: "form-control"}) %>
               </div>
             </div>
@@ -87,7 +86,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <%= f.label :venue_description %>
+                <%= f.label :venue_description, 'Descripcíon del lugar' %>
                 <%= f.text_area :venue_description, class: "form-control"%>
               </div>
             </div>
@@ -95,7 +94,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <%= f.label :description %>
+                <%= f.label :description, 'Descripcíon del evento' %>
                 <%= f.text_area :description, class: "form-control"%>
               </div>
             </div>
@@ -105,11 +104,11 @@
                     <%= f.fields_for  :event_attachments do |event_attachment| %>
                       <%= render  'event_attachment_fields', f: event_attachment %>
                     <% end %>
-                    <%= link_to_add_association 'Add Image', f, :event_attachments, partial: 'event_attachment_fields' %>
+                    <%= link_to_add_association 'Agregar imagen', f, :event_attachments, partial: 'event_attachment_fields' %>
                   </div>
               </div>
 
-          <%= f.submit 'Save Event' , class: 'btn btn-info btn-fill pull-right'%>
+          <%= f.submit 'Guardar' , class: 'btn btn-info btn-fill pull-right'%>
           <div class="clearfix"></div>
       </div>
     </div>
@@ -120,7 +119,7 @@
          <%= render partial: 'admin/events/schedule_fields', locals: { f: schedule_form } %>
        <% end %>
      </div>
-     <%= link_to_add_association "Add Day", f, :schedules, partial: 'admin/events/schedule_fields', class: "btn btn-round btn-fill btn-info",
+     <%= link_to_add_association "Agregar Día", f, :schedules, partial: 'admin/events/schedule_fields', class: "btn btn-round btn-fill btn-info",
      :"data-association-insertion-node" => "#schedules-content",
      :"data-association-insertion-method" => :after %>
     </div>

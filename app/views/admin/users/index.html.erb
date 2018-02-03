@@ -11,9 +11,9 @@
             <table id="speakers" class="table table-hover">
               <thead>
                 <tr>
-                  <th>Photo</th>
-                  <th>Name/Bio</th>
-                  <th>Actions</th>
+                  <th>Foto</th>
+                  <th>Nombre/Biografia</th>
+                  <th>Opciones</th>
                 </tr>
               </thead>
 
@@ -22,15 +22,15 @@
                 <tr>
                   <td class="row-img" style="width:  150px;"><%= image_tag speaker.profile.avatar %></td>
                   <td WIDTH="800"> <%= speaker.full_name %> </br> <%= speaker.profile.about_me %></td>
-                  <td><%= link_to 'Edit', edit_admin_user_path(speaker) %>/<%= link_to 'Destroy', admin_user_path(speaker), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <td><%= link_to 'Editar', edit_admin_user_path(speaker) %>/<%= link_to 'Eliminar', admin_user_path(speaker), method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 </tr>
                 <% end %>
               </tbody>
             </table>
         <% else %>
-          <p>You don't have any speakers yet.</p>
+          <p>Aún no hay Expositores o Mentores</p>
         <% end %>
-        <%= link_to 'Add Speaker', new_admin_user_path, class: "btn btn-primary" %>
+        <%= link_to 'Crear  Expositor', new_admin_user_path, class: "btn btn-primary" %>
       </div>
     </div>
   </div>
