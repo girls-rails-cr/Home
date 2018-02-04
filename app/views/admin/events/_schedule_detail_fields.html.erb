@@ -1,16 +1,16 @@
 <div class="nested-fields row">
   <div class="form-group col-md-8 sd-text-right">
     <%= f.text_field :name, required: true,
-    autofocus: true, placeholder: "Breakfast...",
+    autofocus: true, placeholder: "Desayuno...",
     class: "form-control"%>
   </div>
   <div class="form-group col-md-4 sd-text-right">
-    <%= f.text_field :date_name, value: f&.object&.clean_time(f&.object&.date_name), placeholder: "9:00", class: "form-control date-name"%>
+    <%= f.text_field :date_name, value: f&.object&.clean_time(f&.object&.date_name), placeholder: "9:00 AM", class: "form-control date-name"%>
   </div>
   <div class="form-group col-md-10 sd-text-right">
-    <%= f.collection_select :user_id, User.speakers, :id, :full_name, {prompt: 'Select Speaker'}, {class: "form-control"} %>
+    <%= f.collection_select :user_id, User.speakers, :id, :full_name, {prompt: 'Seleccione Expositor/Mentor'}, {class: "form-control"} %>
   </div>
   <div class="form-group col-md-10 sd-text-right">
-    <%= link_to_remove_association "Remove Activity Detail", f %>
+    <%= link_to_remove_association "Remover detalle de hora", f %>
   </div>
 </div>

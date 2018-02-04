@@ -19,7 +19,7 @@
 
               <tbody>
                 <% @events.each do |event| %>
-                <tr>
+                <tr></tr>
                   <td WIDTH="800"> <%= event.title %> </br> <%= event.description %></td>
                   <td><%= link_to 'Edit', edit_admin_event_path(event) %>/<%= link_to 'Destroy', admin_event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 </tr>

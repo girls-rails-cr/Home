@@ -57,6 +57,7 @@ module Admin
                                     :map_url,
                                     :background_image,
                                     :status,
+                                    :end_date,
                                     schedules_attributes: [:id,
                                                            :name,
                                                            :_destroy,
