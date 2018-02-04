@@ -4,25 +4,25 @@
   <div class="col-md-8">
     <div class="card">
       <div class="header">
-        <h4 class="title">Edit Profile</h4>
+        <h4 class="title">Editando el perfil</h4>
       </div>
       <div class="content">
           <div class="row">
             <div class="col-md-5">
               <div class="form-group">
-                <%= profile.label :career %>
+                <%= profile.label :career, "Carrera"  %>
                 <%= profile.text_field :career, class: "form-control"%>
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
-                <%= profile.label :username %>
+                <%= profile.label :username, "Nombre de usario" %>
                 <%= profile.text_field :username, class: "form-control"%>
               </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
-                <%= f.label :email %>
+                <%= f.label :email,"Correo" %>
                 <%= f.email_field :email, class: "form-control"%>
               </div>
             </div>
@@ -31,13 +31,13 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <%= profile.label :first_name %>
+                <%= profile.label :first_name, "Primer nombre" %>
                 <%= profile.text_field :first_name, class: "form-control"%>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <%= profile.label :last_name %>
+                <%= profile.label :last_name, "Segundo nombre" %>
                 <%= profile.text_field :last_name, class: "form-control"%>
               </div>
             </div>
@@ -46,7 +46,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <%= profile.label :address %>
+                <%= profile.label :address, "Dirección"%>
                 <%= profile.text_field :address, class: "form-control"%>
               </div>
             </div>
@@ -55,19 +55,19 @@
           <div class="row">
             <div class="col-md-4">
               <div class="form-group">
-                <%= profile.label :fb_link %>
+                <%= profile.label :fb_link, "Link de Facebook" %>
                 <%= profile.text_field :fb_link, class: "form-control"%>
               </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
-                <%= profile.label :twitter_link %>
+                <%= profile.label :twitter_link, "Link de Twitter" %>
                 <%= profile.text_field :twitter_link, class: "form-control"%>
               </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
-                <%= profile.label 'Linkedin link' %>
+                <%= profile.label 'Link de Linkedin ' %>
                 <%= profile.text_field :linkedin, class: "form-control"%>
               </div>
             </div>
@@ -76,12 +76,12 @@
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <%= profile.label :about_me %>
+                <%= profile.label :about_me,"Acerca de mi" %>
                 <%= profile.text_area :about_me, class: "form-control"%>
               </div>
             </div>
           </div>
-          <%= f.submit 'Update Profile', class: 'btn btn-info btn-fill pull-right'%>
+          <%= f.submit 'Guardar', class: 'btn btn-info btn-fill pull-right'%>
           <div class="clearfix"></div>
       </div>
     </div>
@@ -96,7 +96,7 @@
              <%= show_avatar(@user) %>
              <label class="upload-avatar">
               <%= profile.file_field :avatar, accept: 'image/png,image/gif,image/jpeg', value: 'Upload', id: 'load_image'%>
-              Change Photo
+              Cambiar  Imagen
             </label>
             <h4 class="title"><%= @user.full_name %> <br/>
               <small> <%= @user&.profile.username  %></small>

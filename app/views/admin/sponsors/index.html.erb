@@ -11,9 +11,9 @@
             <table id="sponsors" class="table table-hover">
               <thead>
                 <tr>
-                  <th>Photo</th>
-                  <th>Name/Bio</th>
-                  <th>Actions</th>
+                  <th>Imagen</th>
+                  <th>Nombre/Descripción</th>
+                  <th>Opciones</th>
                 </tr>
               </thead>
 
@@ -22,15 +22,19 @@
                 <tr>
                   <td class="row-img" style="width:  150px;"><%= image_tag sponsor.logo %></td>
                   <td WIDTH="800"> <%= sponsor.name %> </br> <%= sponsor.description%></td>
+<<<<<<< HEAD
                   <td><%= link_to 'Edit', edit_admin_sponsor_path(sponsor) %>/<%= link_to 'Destroy', admin_sponsor_path(sponsor), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+=======
+                  <td><%= link_to 'Editar', edit_admin_sponsor_path(sponsor) %>/<%= link_to 'Eliminar', admin_sponsor_path(sponsor), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+>>>>>>> d4871eeaf4b779952d1be09c922136ee35c3fdca
                 </tr>
                 <% end %>
               </tbody>
             </table>
         <% else %>
-          <p>You don't have any speakers yet.</p>
+          <p>Aún no hay patrocinadores</p>
         <% end %>
-        <%= link_to 'Add Sponsor', new_admin_sponsor_path, class: "btn btn-primary" %>
+        <%= link_to 'Crear Patrocinador', new_admin_sponsor_path, class: "btn btn-primary" %>
       </div>
     </div>
   </div>

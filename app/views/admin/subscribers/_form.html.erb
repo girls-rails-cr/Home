@@ -2,11 +2,12 @@
   <%= form_with(model: [:admin, @subscriber], local: true) do |form| %>
   <% if subscriber.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(subscriber.errors.count, "error") %> prohibited this admin_sponsor from being saved:</h2>
+      <h2><%= pluralize(subscriber.errors.count, "error") %>
+        prohibited this admin_sponsor from being saved:</h2>
 
       <ul>
         <% subscriber.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
@@ -14,75 +15,74 @@
   <div class="col-md-12">
     <div class="card">
       <div class="header">
-        <h4 class="title">Sponsor</h4>
+        <h4 class="title">Suscriptor</h4>
       </div>
       <div class="content">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <%= form.label :name %>
-                <%= form.text_field :name, id: :subscriber_name, class: "form-control" %>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <%= form.label :email %>
-                <%= form.text_field :email, id: :subscriber_email , class: "form-control"%>
-              </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= form.label :name, "Nombre" %>
+              <%= form.text_field :name, id: :subscriber_name, class: "form-control" %>
             </div>
           </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= form.label :email, "Email" %>
+              <%= form.text_field :email, id: :subscriber_email , class: "form-control"%>
+            </div>
+          </div>
+        </div>
 
-          <div class="row">
-            <div class="col-md-4">
-              <div class="form-group">
-                <%= form.label :source %>
-                <%= form.select(:source, [["Facebook", "facebook"], ["Twitter", "twitter"],
-                     ["Instagram", "instagram"], ["Otro", "otro"]], {}, {class: "form-control"}) %>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <%= form.label :work, "Work Place" %>
-                <%= form.text_field :work, id: :subscriber_work, class: "form-control" %>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <%= form.label :phone_number %>
-                <%= form.text_field :phone_number, id: :subscriber_phone_number, class: "form-control" %>
-              </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <%= form.label :source, "Medio de comunicación" %>
+              <%= form.select(:source, [["Facebook", "facebook"], ["Twitter", "twitter"], ["Instagram", "instagram"], ["Otro", "otro"]], {}, {class: "form-control"}) %>
             </div>
           </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <%= form.label :work, "Lugar de trabajo" %>
+              <%= form.text_field :work, id: :subscriber_work, class: "form-control" %>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <%= form.label :phone_number, "# Teléfono" %>
+              <%= form.text_field :phone_number, id: :subscriber_phone_number, class: "form-control" %>
+            </div>
+          </div>
+        </div>
 
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <%= form.label :comments %>
-                <%= form.text_area :comments, id: :subscriber_comments, class: "form-control" %>
-              </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <%= form.label :comments, "Comentarios" %>
+              <%= form.text_area :comments, id: :subscriber_comments, class: "form-control" %>
             </div>
           </div>
+        </div>
 
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <%= form.label :level_knowledge %>
-                <%= form.select(:level_knowledge, [["Basic", "basico"], ["Middle", "intermedio"], ["Advanced", "avanzado"]], {}, {class: "form-control"}) %>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <%= form.label :event_id, "Event" %>
-                <%= form.collection_select :event_id, Event.active, :id, :title, {prompt: true}, {class: "form-control"} %>
-              </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= form.label :level_knowledge, "Nivel de conocimiento" %>
+              <%= form.select(:level_knowledge, [["Basic", "basico"], ["Middle", "intermedio"], ["Advanced", "avanzado"]], {}, {class: "form-control"}) %>
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-12"><%= form.submit 'Save', class: 'btn btn-info btn-fill pull-right'%></div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= form.label :event_id, "Evento" %>
+              <%= form.collection_select :event_id, Event.active, :id, :title, {prompt: true}, {class: "form-control"} %>
+            </div>
           </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12"><%= form.submit 'Guardar', class: 'btn btn-info btn-fill pull-right'%></div>
+        </div>
 
       </div>
     </div>
   </div>
- <% end %>
+<% end %>
 </div>

@@ -10,4 +10,5 @@
 
 $(document).on('turbolinks:load', function() {
   $('#event-start-time').datetimepicker();
+  $('#event-end-time').datetimepicker();
 });

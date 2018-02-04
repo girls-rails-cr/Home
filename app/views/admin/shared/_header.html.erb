@@ -4,13 +4,13 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           <% if current_user %>
-          <%= link_to  destroy_user_session_path, method: :delete do %>
-          <p>Log out</p>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <p>Salir</p>
+            <% end %>
           <% end %>
-          <% end %>
-        </li>
-        <li class="separator hidden-lg hidden-md"></li>
-      </ul>
-    </div>
+      </li>
+      <li class="separator hidden-lg hidden-md"></li>
+    </ul>
   </div>
+</div>
 </nav>

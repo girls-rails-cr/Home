@@ -1,34 +1,35 @@
 <div class="row">
   <%= form_with(model: [:admin, @voluntary], local: true) do |form| %>
   <% if voluntary.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(voluntary.errors.count, "error") %> prohibited this voluntary from being saved:</h2>
+    <div id="error_explanation">
+      <h2><%= pluralize(voluntary.errors.count, "error") %>
+        prohibited this voluntary from being saved:</h2>
 
-    <ul>
-      <% voluntary.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
+      <ul>
+        <% voluntary.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
 
   <div class="col-md-12">
     <div class="card">
       <div class="header">
-        <h4 class="title">Voluntary</h4>
+        <h4 class="title">Voluntarios</h4>
       </div>
       <div class="content">
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <%= form.label :name %>
+              <%= form.label :name, "Nombre" %>
               <%= form.text_field :name, id: :voluntary_name, class: "form-control" %>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <%= form.label :phone %>
-              <%= form.text_field :phone, id: :voluntary_phone, class: "form-control"  %>
+              <%= form.label :phone, "# Teléfono" %>
+              <%= form.text_field :phone, id: :voluntary_phone, class: "form-control" %>
             </div>
           </div>
         </div>
@@ -36,13 +37,13 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <%= form.label :career %>
+              <%= form.label :career, "Carrera" %>
               <%= form.text_field :career, id: :voluntary_career, class: "form-control" %>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <%= form.label :interest_area %>
+              <%= form.label :interest_area, "Área de Interés" %>
               <%= form.text_field :interest_area, id: :voluntary_interest_area, class: "form-control" %>
             </div>
           </div>
@@ -51,26 +52,25 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <%= form.label :email %>
+              <%= form.label :email, "Correo" %>
               <%= form.text_field :email, id: :voluntary_email, class: "form-control" %>
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="form-group">
-              <%= form.label :message %>
+              <%= form.label :message, "Mensaje" %>
               <%= form.text_area :message, id: :voluntary_message, class: "form-control" %>
             </div>
           </div>
         </div>
 
-
         <div class="row">
-          <div class="col-md-12"><%= form.submit 'Save', class: 'btn btn-info btn-fill pull-right'%></div>
+          <div class="col-md-12"><%= form.submit 'Guardar', class: 'btn btn-info btn-fill pull-right'%></div>
         </div>
 
       </div>
     </div>
   </div>
-  <% end %>
+<% end %>
 </div>

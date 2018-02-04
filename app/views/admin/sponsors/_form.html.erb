@@ -14,19 +14,19 @@
   <div class="col-md-12">
     <div class="card">
       <div class="header">
-        <h4 class="title">Sponsor</h4>
+        <h4 class="title">Patrocinador</h4>
       </div>
       <div class="content">
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <%= form.label :name %>
+                <%= form.label :name, "Nombre" %>
                 <%= form.text_field :name, id: :sponsor_name, class: "form-control" %>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <%= form.label :email_contact %>
+                <%= form.label :email_contact, "Email de contacto" %>
                 <%= form.text_field :email_contact, id: :sponsor_email_contact , class: "form-control"%>
               </div>
             </div>
@@ -35,13 +35,13 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <%= form.label :company %>
+                <%= form.label :company, "Compañia" %>
                 <%= form.text_field :company, id: :sponsor_company, class: "form-control" %>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <%= form.label :page_url %>
+                <%= form.label :page_url, "Url de la pagina" %>
                 <%= form.text_field :page_url, id: :sponsor_page_url, class: "form-control" %>
               </div>
             </div>
@@ -50,7 +50,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="form-group">
-                <%= form.label :description %>
+                <%= form.label :description, "Descripción" %>
                 <%= form.text_area :description, id: :sponsor_description, class: "form-control" %>
               </div>
             </div>
@@ -61,7 +61,7 @@
               <div class="form-group">
                 <label class="upload-avatar">
                  <%= form.file_field :logo, accept: 'image/png,image/gif,image/jpeg', value: 'Upload', class: 'load-image'%>
-                 Upload Logo Image
+                 Subir logo
                </label>
                <div id="preview-image">
                  <% if @sponsor.logo? %>
@@ -72,19 +72,19 @@
             </div>
             <div class="col-md-4">
               <div class="form-group">
-                <%= form.label :status %>
+                <%= form.label :status, "Status" %>
                 <%= form.select(:status, [["Active", "active"], ["Inactive", "inactive"], ["Pending", "pending"]], {}, {class: "form-control"}) %>
               </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
-                <%= form.label :event_id, "Event" %>
+                <%= form.label :event_id, "Evento" %>
                 <%= form.collection_select :event_id, Event.active, :id, :title, {prompt: true}, {class: "form-control"} %>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12"><%= form.submit 'Save', class: 'btn btn-info btn-fill pull-right'%></div>
+            <div class="col-md-12"><%= form.submit 'Guardar', class: 'btn btn-info btn-fill pull-right'%></div>
           </div>
 
       </div>

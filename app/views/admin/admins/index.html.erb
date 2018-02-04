@@ -11,9 +11,9 @@
             <table id="admins" class="table table-hover">
               <thead>
                 <tr>
-                  <th>Photo</th>
-                  <th>Name/Bio</th>
-                  <th>Actions</th>
+                  <th>Foto</th>
+                  <th>Nombre/Biografia</th>
+                  <th>Opciones</th>
                 </tr>
               </thead>
 
@@ -22,13 +22,17 @@
                 <tr>
                   <td class="row-img" style="width:  150px;"><%=  image_tag admin&.profile&.avatar if admin&.profile&.avatar %></td>
                   <td WIDTH="800"> <%= admin.full_name  if admin&.profile %>  </br> <%= admin&.profile&.about_me %></td>
+<<<<<<< HEAD
                   <td><%= link_to 'Edit', edit_admin_admin_path(admin) %>/<%= link_to 'Destroy', admin_admin_path(admin), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+=======
+                  <td><%= link_to 'Editar', edit_admin_admin_path(admin) %>/<%= link_to 'Eliminar', admin_admin_path(admin), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+>>>>>>> d4871eeaf4b779952d1be09c922136ee35c3fdca
                 </tr>
                 <% end %>
               </tbody>
             </table>
         <% else %>
-          <p>You don't have any speakers yet.</p>
+          <p>Aún no existen admistradores</p>
         <% end %>
       </div>
     </div>

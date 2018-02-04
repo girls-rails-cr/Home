@@ -19,7 +19,7 @@ CarrierWave.configure do |config|
     }
     config.fog_provider = 'fog/aws'                                 # required
     config.storage = :fog
-
+    
     config.fog_directory   = ENV['AWS_BUCKET_NAME']       # required
     #config.fog_host       = 'https://assets.example.com'             # optional, defaults to nil
     #config.fog_public     = false                                    # optional, defaults to true
