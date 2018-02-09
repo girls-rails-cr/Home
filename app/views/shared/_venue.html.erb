@@ -1,0 +1,25 @@
+<!-- Start Venue -->
+<section id="mu-venue">
+  <div class="mu-venue-area">
+    <div class="row">
+
+      <div class="col-md-6">
+        <div class="mu-venue-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.019647216428!2d-84.0332225855015!3d9.932321476921825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e3f13462cc7b%3A0x97219232a6ee2da8!2sCenfotec!5e0!3m2!1sen!2scr!4v1517802387186" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="mu-venue-address">
+          <br>
+          <h2>¿Dónde? <i class="fa fa-chevron-right" aria-hidden="true"></i></h2>
+          <h2><%= @event&.venue_name %></h2>
+          <h4><%= @event&.venue_address %></h4>
+          <p><%= @event&.venue_description %></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- End Venue -->

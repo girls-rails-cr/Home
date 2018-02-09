@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: events
@@ -16,6 +15,7 @@
 #  status                  :integer          default("inactive"), not null
 #  created_at              :datetime         not null
 #  updated_at              :datetime         not null
+#  end_date                :datetime
 #
 
 class Event < ApplicationRecord

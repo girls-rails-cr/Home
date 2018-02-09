@@ -118,3 +118,191 @@
    -moz-border-radius: 4px;
         border-radius: 4px;
 }
+
+/*--------------------*/
+/* REGISTER */
+/*--------------------*/
+
+#mu-register {
+	background-image: url("assets/images/register-bg.jpg");
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
+	display: inline;
+	float: left;
+	position: relative;
+	width: 100%;
+}
+
+#mu-register::before {
+	background: rgba(0,0,0,0.9);
+	bottom: 0;
+	content: '';
+	left: 0;
+	top: 0;
+	right: 0;
+	position: absolute;
+	opacity: 0.9;
+}
+
+.mu-register-area {
+	display: inline;
+	float: left;
+	padding: 150px 0;
+	width: 100%;
+}
+
+.mu-register-area .mu-title,
+.mu-register-area p {
+	color: #fff;
+}
+
+.mu-register-content {
+	display: inline;
+	float: left;
+	width: 100%;
+	text-align: center;
+	padding: 0 200px;
+	margin-top: 50px;
+}
+
+.mu-register-form .form-group {
+	margin-bottom: 25px;
+}
+
+.mu-register-form .form-control {
+	height: 50px;
+	color: #fff;
+	background-color: transparent;
+	border: 2px solid #fff;
+}
+
+.mu-register-form select.form-control option{
+	color: #333;
+}
+
+.mu-register-form .form-control::-webkit-input-placeholder {
+	color: #fff;
+	font-size: 15px;
+}
+
+.mu-register-form .form-control:-moz-placeholder { /* Firefox 18- */
+	color: #fff;
+	font-size: 15px;
+}
+
+.mu-register-form .form-control::-moz-placeholder {  /* Firefox 19+ */
+	color: #fff;
+	font-size: 15px;
+}
+
+.mu-register-form .form-control:-ms-input-placeholder {
+	color: #fff;
+	font-size: 15px;
+}
+
+.mu-reg-submit-btn {
+	background-color: transparent;
+	border: 2px solid #fff;
+	color: #fff;
+	padding: 12px 75px;
+	margin-top: 20px;
+	letter-spacing: 1px;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+/*--------------------*/
+/* REGISTER */
+/*--------------------*/
+
+#mu-register {
+	background-image: url("register-bg.jpg");
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
+	display: inline;
+	float: left;
+	position: relative;
+	width: 100%;
+}
+
+#mu-register::before {
+	background: rgba(0, 0, 0, 0.3);
+	bottom: 0;
+	content: '';
+	left: 0;
+	top: 0;
+	right: 0;
+	position: absolute;
+	opacity: 0.9;
+}
+
+.mu-register-area {
+	display: inline;
+	float: left;
+	padding: 150px 0;
+	width: 100%;
+}
+
+.mu-register-area .mu-title,
+.mu-register-area p {
+	color: #fff;
+}
+
+.mu-register-content {
+	display: inline;
+	float: left;
+	width: 100%;
+	text-align: center;
+	padding: 0 200px;
+	margin-top: 50px;
+}
+
+.mu-register-form .form-group {
+	margin-bottom: 25px;
+}
+
+.mu-register-form .form-control {
+	height: 50px;
+	color: #fff;
+	background-color: transparent;
+	border: 2px solid #fff;
+}
+
+.mu-register-form select.form-control option{
+	color: #333;
+}
+
+.mu-register-form .form-control::-webkit-input-placeholder {
+	color: #fff;
+	font-size: 15px;
+}
+
+.mu-register-form .form-control:-moz-placeholder { /* Firefox 18- */
+	color: #fff;
+	font-size: 15px;
+}
+
+.mu-register-form .form-control::-moz-placeholder {  /* Firefox 19+ */
+	color: #fff;
+	font-size: 15px;
+}
+
+.mu-register-form .form-control:-ms-input-placeholder {
+	color: #fff;
+	font-size: 15px;
+}
+
+.mu-reg-submit-btn {
+	background-color: transparent;
+	border: 2px solid #fff;
+	color: #fff;
+	padding: 12px 75px;
+	margin-top: 20px;
+	letter-spacing: 1px;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}

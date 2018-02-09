@@ -9,6 +9,8 @@
 //= require_tree ./admin
 
 $(document).on('turbolinks:load', function() {
-  $('#event-start-time').datetimepicker();
-  $('#event-end-time').datetimepicker();
+  if ($('#event-start-time').length || $('#event-end-time').length) {
+    $('#event-start-time').datetimepicker();
+    $('#event-end-time').datetimepicker();
+  }
 });

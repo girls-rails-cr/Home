@@ -22,4 +22,7 @@ class Sponsor < ApplicationRecord
     active:  1,
     pending: 2
   }
+  scope :current_sponsors, ->(event_id) { where(event_id: event_id, status: 1) }
+
+
 end

@@ -34,8 +34,8 @@ class Subscriber < ApplicationRecord
     end
   end
 
-  def self.current_event
-    where(event_id: Event.active.last.id)
+  def self.current_subscribers(event_id)
+    where(event_id: event_id)
   end
 
 end

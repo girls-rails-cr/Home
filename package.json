@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "cleave.js": "^1.1.1",
     "foundation-sites": "^6.4.3",
     "jquery": "^3.2.1",
     "jquery-countdown": "^2.2.0",

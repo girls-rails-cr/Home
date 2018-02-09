@@ -20,12 +20,15 @@
            <% @schedules.each do|schedule|%>
              <div role="tabpanel" class="tab-pane fade mu-event-timeline in active" id="schedule_<%=schedule.id%>">
               <ul>
-              <% schedule.schedule_details.each do |schedule_details|%>
+              <% schedule.schedule_details.each do |schedule_detail|%>
                 <li>
                   <div class="mu-single-event">
-                    <p class="mu-event-time"><%=schedule_details.date_name.strftime("%I:%M %P")%></p>
-                    <h3><%=schedule_details.name%></h3>
-                    <span>By Karl Groves</span>
+                    <%= image_tag schedule_detail.speaker_photo  if schedule_detail.speaker %>
+                    <p class="mu-event-time"><%=schedule_detail.date_name.strftime("%I:%M %P")%></p>
+                    <h3><%=schedule_detail.name%></h3>
+                    <% if schedule_detail.speaker %>
+                      <span>By <%= schedule_detail.user_name %></span>
+                    <% end %>
                   </div>
                  </li>
               <%end%>
