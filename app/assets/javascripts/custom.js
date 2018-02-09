@@ -1,35 +1,5 @@
-/**
-* Template Name: Eventoz
-* Version: 1.0
-* Template Scripts
-* Author: MarkUps
-* Author URI: http://www.markups.io/
-
-Custom JS
-
-1. FIXED MENU
-2. EVENT TIME COUNTER
-3. MENU SMOOTH SCROLLING
-4. VIDEO POPUP
-5. SPEAKERS SLIDEER ( SLICK SLIDER )
-6. BOOTSTRAP ACCORDION
-7. MOBILE MENU CLOSE
-
-
-**/
-
-
-
-(function( $ ){
-
-
-
-  /* ----------------------------------------------------------- */
-  /*  1. FIXED MENU
-  /* ----------------------------------------------------------- */
-
-
-  jQuery(window).bind('scroll', function () {
+(function($) {
+  jQuery(window).bind('scroll', function() {
     if ($(window).scrollTop() > 150) {
       $('.mu-navbar').addClass('mu-nav-show');
 
@@ -37,29 +7,35 @@ Custom JS
       $('.mu-navbar').removeClass('mu-nav-show');
     }
   });
-  /* ----------------------------------------------------------- */
-  /*  3. MENU SMOOTH SCROLLING
-  /* ----------------------------------------------------------- */
 
-  //MENU SCROLLING WITH ACTIVE ITEM SELECTED
 
-  // Cache selectors
-  var lastId,
-  topMenu = $(".mu-menu"),
-  topMenuHeight = topMenu.outerHeight()+13,
-  // All list items
-  menuItems = topMenu.find('a[href^=\\#]'),
-  // Anchors corresponding to menu items
-  scrollItems = menuItems.map(function(){
-    var item = $($(this).attr("href"));
-    if (item.length) { return item; }
+  $('#mu-event-counter').countdown('2020/02/10').on('update.countdown', function(event) {
+    var $this = $(this).html(event.strftime('' +
+      '<span class="mu-event-counter-block"><span>%D</span> Days</span> ' +
+      '<span class="mu-event-counter-block"><span>%H</span> Hours</span> ' +
+      '<span class="mu-event-counter-block"><span>%M</span> Mins</span> ' +
+      '<span class="mu-event-counter-block"><span>%S</span> Secs</span>'));
   });
-  
+
+
+  var lastId,
+    topMenu = $(".mu-menu"),
+    topMenuHeight = topMenu.outerHeight() + 13,
+    // All list items
+    menuItems = topMenu.find('a[href^=\\#]'),
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function() {
+      var item = $($(this).attr("href"));
+      if (item.length) {
+        return item;
+      }
+    });
+
   // Bind click handler to menu items
   // so we can get a fancy scroll animation
-  menuItems.click(function(e){
+  menuItems.click(function(e) {
     var href = $(this).attr("href"),
-    offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+22;
+      offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 22;
     jQuery('html, body').stop().animate({
       scrollTop: offsetTop
     }, 1500);
@@ -67,25 +43,25 @@ Custom JS
   });
 
   // Bind to scroll
-  jQuery(window).scroll(function(){
+  jQuery(window).scroll(function() {
     // Get container scroll position
-    var fromTop = $(this).scrollTop()+topMenuHeight;
+    var fromTop = $(this).scrollTop() + topMenuHeight;
 
     // Get id of current scroll item
-    var cur = scrollItems.map(function(){
+    var cur = scrollItems.map(function() {
       if ($(this).offset().top < fromTop)
-      return this;
+        return this;
     });
     // Get the id of the current element
-    cur = cur[cur.length-1];
+    cur = cur[cur.length - 1];
     var id = cur && cur.length ? cur[0].id : "";
 
     if (lastId !== id) {
       lastId = id;
       // Set/remove active class
       menuItems
-      .parent().removeClass("active")
-      .end().filter("[href=\\#"+id+"]").parent().addClass("active");
+        .parent().removeClass("active")
+        .end().filter("[href=\\#" + id + "]").parent().addClass("active");
     }
   })
 
@@ -117,7 +93,7 @@ Custom JS
 
   // stop iframe if it is play while close the iframe window
 
-  $('.mu-video-close-btn').click(function(){
+  $('.mu-video-close-btn').click(function() {
 
     $('.mu-video-iframe').attr('src', $('.mu-video-iframe').attr('src'));
 
@@ -133,29 +109,44 @@ Custom JS
 
   });
 
-  $('.mu-video-iframe-area, .mu-video-iframe').on('click', function(e){
+  $('.mu-video-iframe-area, .mu-video-iframe').on('click', function(e) {
     e.stopPropagation();
   });
 
-  /* ----------------------------------------------------------- */
-  /*  6. BOOTSTRAP ACCORDION
-  /* ----------------------------------------------------------- */
+  if ($(".mu-speakers-slider").length) {
+    $('.mu-speakers-slider').slick({
+      slidesToShow: 4,
+      responsive: [{
+          breakpoint: 768,
+          settings: {
+            arrows: true,
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            arrows: true,
+            slidesToShow: 1
+          }
+        }
+      ]
+    });
+
+  }
+
+
 
   /* Start for accordion #1*/
-  $('#accordion .panel-collapse').on('shown.bs.collapse', function () {
+  $('#accordion .panel-collapse').on('shown.bs.collapse', function() {
     $(this).prev().find(".fa").removeClass("fa-angle-up").addClass("fa-angle-down");
   });
 
-  //The reverse of the above on hidden event:
 
-  $('#accordion .panel-collapse').on('hidden.bs.collapse', function () {
+  $('#accordion .panel-collapse').on('hidden.bs.collapse', function() {
     $(this).prev().find(".fa").removeClass("fa-angle-down").addClass("fa-angle-up");
   });
 
-
-  /* ----------------------------------------------------------- */
-  /*  7. MOBILE MENU CLOSE
-  /* ----------------------------------------------------------- */
 
   jQuery('.mu-menu').on('click', 'li a', function() {
     $('.mu-navbar .in').collapse('hide');
@@ -163,8 +154,4 @@ Custom JS
 
 
 
-
-
-
-
-})( jQuery );
+})(jQuery);

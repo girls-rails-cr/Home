@@ -1,58 +1,27 @@
 <!-- Start Sponsors -->
 <section id="mu-sponsors">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="mu-sponsors-area">
-      
-                <div class="mu-title-area">
-                  <h2 class="mu-title">Nuestros  patrocinadores</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint assumenda ut molestias doloremque ipsam, fugit
-                    laborum totam, pariatur est cumque at, repudiandae officia ex dolores quas minus optio, iusto soluta?</p>
-                </div>
-      
-                <!-- Start spnonsors brand logo -->
-                <div class="mu-sponsors-content">
-                  <div class="row">
-      
-                    <div class="col-md-4 col-sm-4 col-xs-4">
-                      <div class="mu-sponsors-single">
-                          <%= image_tag  "cenfotec.png" %>    
-                      </div>
-                    </div>
-      
-                    <div class="col-md-4 col-sm-4 col-xs-4">
-                      <div class="mu-sponsors-single">
-                          <%= image_tag  "logo-ml.jpg" %>
-                        </div>
-                    </div>
-      
-                    <div class="col-md-4 col-sm-4 col-xs-4">
-                      <div class="mu-sponsors-single">
-                          <%= image_tag  "guayaba.png" %>
-                        </div>
-                    </div>
-      
-                    <div class="col-md-4 col-sm-4 col-xs-4">
-                      <div class="mu-sponsors-single">
-                          <%= image_tag  "gap.png" %>
-                        </div>
-                    </div>
-      
-                    <div class="col-md-4 col-sm-4 col-xs-4">
-                      <div class="mu-sponsors-single">
-                          <%= image_tag  "logo-4g-black.png" %>
-                        </div>
-                    </div>
-      
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mu-sponsors-area">
+          <div class="mu-title-area">
+            <h2 class="mu-title">Nuestros patrocinadores</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint assumenda ut molestias doloremque ipsam, fugit laborum totam, pariatur est cumque at, repudiandae officia ex dolores quas minus optio, iusto soluta?</p>
+          </div>
+          <div class="mu-sponsors-content">
+            <div class="row">
+              <% @current_sponsors.each do |current_sponsor| %>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                  <div class="mu-sponsors-single">
+                    <%= image_tag current_sponsor.logo %>
                   </div>
                 </div>
-                <!-- End spnonsors brand logo -->
-      
-              </div>
+              <% end %>
             </div>
           </div>
         </div>
-      </section>
-      <!-- End Sponsors -->
-      
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Sponsors -->

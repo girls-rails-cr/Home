@@ -25,7 +25,7 @@ class ScheduleDetail < ApplicationRecord
   def speaker_photo
     user = speaker()
     if user
-      user.profile.avatar
+      user.profile.avatar_url
     else
       ''
     end
@@ -40,13 +40,11 @@ class ScheduleDetail < ApplicationRecord
     end
   end
 
-  private
-
   def speaker
     if self.user_id.present?
       User.find_by(id: user_id)
     else
-      ''
+      false
     end
   end
 

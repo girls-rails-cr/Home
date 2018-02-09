@@ -59,27 +59,30 @@ function export_list() {
 }
 
 function load_datatables() {
-  $('#subscribers').DataTable({
-    "scrollX": true
-  });
+  if ($('#subscribers').length || $('#speakers').length || $('#events').length || $('#sponsors').length || $('#admins').length || $('#voluntaries').length) {
+    $('#subscribers').DataTable({
+      "scrollX": true
+    });
 
-  $('#speakers').DataTable({
-    "scrollX": true
-  });
+    $('#speakers').DataTable({
+      "scrollX": true
+    });
 
-  $('#events').DataTable({
-    "scrollX": true
-  });
+    $('#events').DataTable({
+      "scrollX": true
+    });
 
-  $('#sponsors').DataTable({
-    "scrollX": true
-  });
-  $('#admins').DataTable({
-    "scrollX": true
-  });
-  $('#voluntaries').DataTable({
-    "scrollX": true
-  });
+    $('#sponsors').DataTable({
+      "scrollX": true
+    });
+    $('#admins').DataTable({
+      "scrollX": true
+    });
+    $('#voluntaries').DataTable({
+      "scrollX": true
+    });
+  }
+
 
 }
 

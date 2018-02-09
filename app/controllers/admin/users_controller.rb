@@ -52,7 +52,7 @@ module Admin
     end
 
     def speaker_params
-      params.require(:user).permit(:role, :password, :email,
+      params.require(:user).permit(:role, :password, :email, :event_id,
                                     profile_attributes: [:id, :first_name, :avatar, :career, :avatar_cache, :last_name, :username, :company, :address, :fb_link, :twitter_link, :linkedin, :about_me, :_destroy])
     end
   end

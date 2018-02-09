@@ -1,0 +1,18 @@
+<%= render 'shared/header', locals: {event: @event} %>
+<section id="mu-contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mu-contact-area">
+
+          <div class="mu-title-area">
+            <h2 class="mu-heading-title">Contáctanos</h2>
+            <p class="label-form">Ponte en contacto con nosotros.</p>
+          </div>
+          <%= render 'shared/forms', locals: {event: @event} %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<%= render 'shared/footer'  %>

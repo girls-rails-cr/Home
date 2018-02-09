@@ -3,6 +3,14 @@ $red: rgb(219, 0, 48);
   display: inline-grid;
   width: 100%;
 }
+
+.justify-content-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .parallax {
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -349,3 +357,4 @@ hr{
   margin: 0 auto;
   display: block;
 }
+#mu-venue-map{margin-bottom: 0px;}

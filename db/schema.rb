@@ -52,6 +52,9 @@ ActiveRecord::Schema.define(version: 20180203044419) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "end_date"
+    t.string "venue_name"
+    t.string "venue_address"
+    t.text "short_description"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -132,6 +135,7 @@ ActiveRecord::Schema.define(version: 20180203044419) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "event_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -145,6 +149,7 @@ ActiveRecord::Schema.define(version: 20180203044419) do
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "event_id"
   end
 
   add_foreign_key "event_attachments", "events", on_delete: :cascade

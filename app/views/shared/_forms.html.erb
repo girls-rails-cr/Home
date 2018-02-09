@@ -1,0 +1,157 @@
+<% if params[:action] == "index" %>
+  <!-- Subscriber -->
+  <section id="mu-register">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mu-register-area">
+            <% if cookies[:saved_load] %>
+              <div class="mu-title-area">
+                <h2 class="mu-title">¡Hola, estamos emocionados por empezar!</h2>
+                <h3>¡Gracias por inscribirse!</h3>
+                <h3>Nos vemos este <%= @event.start_time.strftime('%e') %> y <%= @event.end_date.strftime('%e') %> de Marzo.</h3>
+              </div>
+              <% elsif @subscribers.size >= 50 %>
+                <h3>Lamentamos decirte que hemos cerrado el proceso de inscripcion.
+                  <br>
+                  Nos vemos en el próximo evento.</h3>
+              <% else %>
+                <div class="mu-title-area">
+                  <h2 class="mu-title">Regístrate ahora</h2>
+                  <p class="label-form">
+                    Solo llena unos datos y formaras parte del evento.</p>
+                </div>
+
+                <div class="mu-register-content">
+                  <%= form_with(model: Subscriber.new, local: true, class: "mu-register-form" )do |form| %>
+                  <%= form.hidden_field :event_id, value: @event.id %>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <%= form.text_field :name, id: :subscriber_name, required: true, placeholder: "Nombre", class: "form-control"%>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <%= form.text_field :phone_number, id: "phone-number", placeholder: "Número Telefónico", class: "form-control" %>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <%= form.email_field :email, id: :subscriber_email, required: true, placeholder: "Correo Electrónico", class: "form-control" %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <%= form.select :level_knowledge, Subscriber.level_knowledges.map { |key, value| [key.humanize, key] }, {}, {class: "form-control"}%>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <%= form.select :source, ["Facebook", "Twitter", "Instagram", "Otros"],{ promot: "¿Cómo te diste cuenta de nostros?"}, {class: "form-control"}%>
+                      </div>
+                    </div>
+                  </div>
+                  <%= form.submit "Enviar Inscripción", class: "mu-reg-submit-btn" %>
+                <% end %>
+              </div>
+
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<% elsif params[:action] == "sponsors" %>
+  <!-- Start Contact Content -->
+  <div class="mu-contact-content">
+    <div class="row">
+
+    <div class="col-md-12">
+      <div class="mu-contact-form-area">
+        <div id="form-messages"></div>
+        <%= form_with(model: Sponsor.new, local: true, class: "mu-contact-form" )do |form| %>
+          <%= form.hidden_field :event_id, value: @event.id %>
+            <div class="form-group">
+              <%= form.text_field :name, placeholder: "Nombre de la empresa", required: true, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= form.email_field :email_field, placeholder: "Correo Electrónico", required: true, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= form.text_area :description, placeholder: "Descripción de la empresa", required: true, class: "form-control" %>
+            </div>
+            <%= button_tag(type: 'submit', class: "mu-send-msg-btn") do %>
+              <span>Registrase</span>
+            <% end %>
+          <% end %>
+        </br>
+        </br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Contact Content -->
+<% else %>
+  <!-- Start Contact Content -->
+  <div class="mu-contact-content">
+    <div class="row">
+
+    <div class="col-md-12">
+      <div class="mu-contact-form-area">
+        <div id="form-messages"></div>
+          <%= form_with(model: Voluntary.new, local: true, class: "mu-contact-form")do |form| %>
+            <%= form.hidden_field :event_id, value: @event.id %>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <%= form.text_field :name, placeholder: "Nombre", required: true, class: "form-control" %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <%= form.text_field :phone, id: "phone-number", placeholder: "Número Telefónico", class: "form-control" %>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <%= form.email_field :email, id: :voluntary_email, required: true, placeholder: "Correo Electrónico", class: "form-control" %>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <%= form.text_field :career, id: :voluntary_career, placeholder: "Área de estudio", class: "form-control" %>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <%= form.text_field :interest_area, id: :voluntary_interest_area, placeholder: "Área de interés", class: "form-control" %>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <%= form.text_area :message, placeholder: "Mensaje de interés", id: :voluntary_message, class: "form-control" %>
+                </div>
+              </div>
+              <%= button_tag(type: 'submit', class: "mu-send-msg-btn") do %>
+                <span>Registrase</span>
+              <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Contact Content -->
+<% end %>

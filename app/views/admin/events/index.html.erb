@@ -11,24 +11,23 @@
             <table id="events" class="table table-hover">
               <thead>
                 <tr>
-                  <th>Imagen de Fondo</th>
-                  <th>Nombre/Descripción</th>
-                  <th>Opciones</th>
+                  <th>Background Image</th>
+                  <th>Title/Description</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
 
               <tbody>
                 <% @events.each do |event| %>
-                <tr>
                   <td class="row-img" style="width:  150px;"><%= image_tag event&.background_image %></td>
                   <td WIDTH="800"> <%= event.title %> </br> <%= event.description %></td>
-                  <td><%= link_to 'Editar', edit_admin_event_path(event) %>/<%= link_to 'Eliminar', admin_event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <td><%= link_to 'Edit', edit_admin_event_path(event) %>/<%= link_to 'Destroy', admin_event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 </tr>
                 <% end %>
               </tbody>
             </table>
         <% else %>
-          <p>Aún no existen Eventos.</p>
+          <p>You don't have any events yet.</p>
         <% end %>
         <%= link_to 'Crear Evento', new_admin_event_path, class: "btn btn-primary" %>
       </div>

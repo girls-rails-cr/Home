@@ -1,26 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rails Girls Costa Rica</title>
+    <%= metamagic %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag "icon.ico" %>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Fonts -->
 
-<head>
-  <%= metamagic %>
-  <%= csrf_meta_tags %>
-  <%= favicon_link_tag "icon.ico" %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <!-- Fonts -->
+    <!-- Open Sans for body font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
+    <!-- Montserrat for title -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  </head>
 
-  <!-- Open Sans for body font -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
-  <!-- Montserrat for title -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-</head>
-
-<body>
-  <!-- Start main content -->
-  <main role="main">
-    <%= yield %>
-  </main>
-  <!-- End main content -->
-</body>
+  <body>
+    <!-- Start main content -->
+    <main role="main">
+      <%= yield %>
+    </main>
+    <!-- End main content -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+  </body>
 
 </html>

@@ -1,0 +1,33 @@
+<section id="mu-speakers">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mu-speakers-area">
+
+          <div class="mu-title-area">
+            <h2 class="mu-title">Nuestro Equipo</h2>
+            <p>Contamos con los mejores expositores, mentores y coordinadores los cuales cuentan con un amplio recorrido en desarrollo web y por supuesto en RoR :).</p>
+          </div>
+          <div class="mu-speakers-content">
+            <div class="mu-speakers-slider">
+              <% @current_speakers.each do |current_speaker| %>
+                <div class="mu-single-speakers">
+                  <%= image_tag current_speaker.profile.avatar, class: "current-spaeker-img" %>
+                  <div class="mu-single-speakers-info">
+                    <h3><%= current_speaker.full_name %></h3>
+                    <p><%= current_speaker.profile.career %></p>
+                    <ul class="mu-single-speakers-social">
+                      <li><a href="<%= current_speaker&.profile&.fb_link %>"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="<%= current_speaker&.profile&.twitter_link %>"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="<%= current_speaker&.profile&.linkedin %>"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -16838,8 +16838,7 @@ hr {
 /* line 20, /Users/kenneth/Desktop/work/railsgirls/Home/app/assets/stylesheets/header.scss */
 .mu-hero-overlay {
   display: inline;
-  float: left;
-  opacity: 0.94;
+  float: left; 
   width: 100%;
 }
 
@@ -22355,7 +22354,6 @@ hr {
 .mu-hero-overlay {
   display: inline;
   float: left;
-  opacity: 0.94;
   width: 100%;
 }
 

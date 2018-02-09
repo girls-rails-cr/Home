@@ -12,131 +12,30 @@
           <div class="mu-schedule-content-area">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs mu-schedule-menu" role="tablist">
-              <li role="presentation" class="active"><a href="#first-day" aria-controls="first-day" role="tab" data-toggle="tab">1 Day / Sábado, Septiembre 9, 2017</a></li>
-              <li role="presentation"><a href="#second-day" aria-controls="second-day" role="tab" data-toggle="tab">2 Day / Domingo, Septiembre 10, 2017</a></li>
-            </ul>
-
-            <!-- Tab panes -->
-            <div class="tab-content mu-schedule-content">
-              <div role="tabpanel" class="tab-pane fade mu-event-timeline in active" id="first-day">
-                <ul>
-                  <li>
-                    <div class="mu-single-event">
-                      <p class="mu-event-time">1:00 - 01:30pm</p>
-                      <h3>Bienvenida</h3>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="mu-single-event">
-                      <img src="" alt="event speaker">
-                      <p class="mu-event-time">1:30- 2:00pm</p>
-                      <h3>¿Por qué girls y Ruby On Rails?</h3>
-                      <span>By Karl Groves</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="mu-single-event">
-                      <img src="" alt="event speaker">
-                      <p class="mu-event-time">12:00- 2:30pm</p>
-                      <h3>Patrón MVC para todos</h3>
-                      <span>By Sarah Dransner</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="mu-single-event">
-                      <img src="" alt="event speaker">
-                      <p class="mu-event-time">2:30- 3:00pm</p>
-                      <h3>Conoce Git</h3>
-                      <span>By Ned Stark</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="mu-single-event">
-                      <p class="mu-event-time">3:00 - 3:15pm</p>
-                      <h3>Refrigerio</h3>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="mu-single-event">
-                      <p class="mu-event-time">3:15 - 3:45pm</p>
-                      <h3>¿Ruby?</h3>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="mu-single-event">
-                      <p class="mu-event-time">3:45 - 5:00pm</p>
-                      <h3>Hora de empezar con Ruby on Rails.</h3>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div role="tabpanel" class="tab-pane fade mu-event-timeline" id="second-day">
-                <ul>
-                  <li>
-                    <div class="mu-single-event">
-                      <p class="mu-event-time">8:00 - 8:30am</p>
-                      <h3>¿Cómo vamos?</h3>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="mu-single-event">
-                      <img src="" alt="event speaker">
-                      <p class="mu-event-time">8:30- 9:30am</p>
-                      <h3>A programar!</h3>
-                      <span>Empezamos a programar!.</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="mu-single-event">
-                      <img src="" alt="event speaker">
-                      <p class="mu-event-time">9:30- 9:45am</p>
-                      <h3>Refrigerio</h3>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="mu-single-event">
-                      <img src="" alt="event speaker">
-                      <p class="mu-event-time">9:45- 12:00md</p>
-                      <h3>Seguimos programando!</h3>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="mu-single-event">
-                      <p class="mu-event-time">12:00 - 1:00pm</p>
-                      <h3>Almuerzo</h3>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="mu-single-event">
-                      <p class="mu-event-time">1:00 - 2:45pm</p>
-                      <h3>Afinemos detalles</h3>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="mu-single-event">
-                      <p class="mu-event-time">2:45 - 3:00pm</p>
-                      <h3>Refrigerio</h3>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="mu-single-event">
-                      <p class="mu-event-time">3:00 - 4:00pm</p>
-                      <h3>Publiquemos</h3>
-                      <span>Por último vamos a subir nuestro proyecto a internet.</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="mu-single-event">
-                      <p class="mu-event-time">4:00 - 4:30pm</p>
-                      <h3>Cierre</h3>
-                      <span>Llegamos al final del evento.</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-            </div>
-
+            <% @schedules.each do|schedule|%>
+              <li role="presentation" class=""><a href="#schedule_<%=schedule.id%>" aria-controls="first-day" role="tab" data-toggle="tab"><%=schedule.name%></a></li>
+            <%end%>
+           </ul>
+          <div class="tab-content mu-schedule-content">
+           <% @schedules.each do|schedule|%>
+             <div role="tabpanel" class="tab-pane fade mu-event-timeline in active" id="schedule_<%=schedule.id%>">
+              <ul>
+              <% schedule.schedule_details.each do |schedule_detail|%>
+                <li>
+                  <div class="mu-single-event">
+                    <%= image_tag schedule_detail.speaker_photo  if schedule_detail.speaker %>
+                    <p class="mu-event-time"><%=schedule_detail.date_name.strftime("%I:%M %P")%></p>
+                    <h3><%=schedule_detail.name%></h3>
+                    <% if schedule_detail.speaker %>
+                      <span>By <%= schedule_detail.user_name %></span>
+                    <% end %>
+                  </div>
+                 </li>
+              <%end%>
+              </ul>
+             </div>
+           <%end%>
+          </div>
           </div>
 
         </div>
