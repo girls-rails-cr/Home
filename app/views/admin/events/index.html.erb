@@ -19,7 +19,7 @@
 
               <tbody>
                 <% @events.each do |event| %>
-                  <td class="row-img" style="width:  150px;"><%= image_tag event&.background_image %></td>
+                  <td class="row-img" style="width:  150px;"><%= image_tag event&.background_image.url %></td>
                   <td WIDTH="800"> <%= event.title %> </br> <%= event.description %></td>
                   <td><%= link_to 'Edit', edit_admin_event_path(event) %>/<%= link_to 'Destroy', admin_event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 </tr>

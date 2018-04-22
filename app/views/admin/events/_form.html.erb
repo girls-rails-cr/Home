@@ -62,7 +62,7 @@
                </label>
                <div id="preview-image">
                  <% if @event.background_image? %>
-                    <%= image_tag(@event&.background_image) %>
+                    <%= image_tag(@event&.background_image.url) %>
                    <% end %>
                </div>
               </div>

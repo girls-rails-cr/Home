@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: schedule_details
@@ -16,36 +18,35 @@ class ScheduleDetail < ApplicationRecord
 
   def clean_time(time)
     if time.nil?
-      ''
+      ""
     else
       time.strftime("%I:%M %p")
     end
   end
 
   def speaker_photo
-    user = speaker()
+    user = speaker
     if user
-      user.profile.avatar_url
+      user.profile.avatar.url
     else
-      ''
+      ""
     end
   end
 
   def user_name
-    user = speaker()
+    user = speaker
     if user
       user.full_name
     else
-      ''
+      ""
     end
   end
 
   def speaker
-    if self.user_id.present?
+    if user_id.present?
       User.find_by(id: user_id)
     else
       false
     end
   end
-
 end

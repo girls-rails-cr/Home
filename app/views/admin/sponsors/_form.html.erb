@@ -65,7 +65,7 @@
                </label>
                <div id="preview-image">
                  <% if @sponsor.logo? %>
-                    <%= image_tag(@sponsor&.logo) %>
+                    <%= image_tag(@sponsor&.logo.url) %>
                    <% end %>
                </div>
               </div>

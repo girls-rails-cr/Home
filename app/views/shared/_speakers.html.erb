@@ -12,7 +12,7 @@
             <div class="mu-speakers-slider">
               <% @current_speakers.each do |current_speaker| %>
                 <div class="mu-single-speakers">
-                  <%= image_tag current_speaker.profile.avatar, class: "current-spaeker-img" %>
+                  <%= image_tag current_speaker.profile.avatar.url, class: "current-spaeker-img" %>
                   <div class="mu-single-speakers-info">
                     <h3><%= current_speaker.full_name %></h3>
                     <p><%= current_speaker.profile.career %></p>

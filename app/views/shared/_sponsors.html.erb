@@ -13,7 +13,7 @@
               <% @current_sponsors.each do |current_sponsor| %>
                 <div class="col-md-4 col-sm-4 col-xs-4">
                   <div class="mu-sponsors-single">
-                    <%= image_tag current_sponsor.logo %>
+                    <%= image_tag current_sponsor.logo.url, class: "thumbnail" %>
                   </div>
                 </div>
               <% end %>
