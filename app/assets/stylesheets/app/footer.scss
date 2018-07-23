@@ -1,9 +1,6 @@
-
 /*--------------------*/
 /* FOOTER */
 /*--------------------*/
-
-
 #mu-footer {
 	background-color: #f8f8f8;
 	display: inline;
@@ -11,7 +8,7 @@
 	width: 100%;
 }
 
-.mu-footer-area{
+.mu-footer-area {
 	display: inline;
 	float: left;
 	padding: 30px 0;
@@ -35,7 +32,7 @@
 .mu-social-media a {
 	border: 1px solid #19191a;
 	border-radius: 50px;
-	color: #19191a;
+	color: #ed3d66;
 	display: inline-block;
 	font-size: 12px;
 	margin-right: 10px;
@@ -46,6 +43,10 @@
 	height: 35px;
 	line-height: 35px;
 	font-size: 15px;
+}
+
+.mu-social-media a:hover {
+	border: 1px solid #ed3d66;
 }
 
 .mu-footer-bottom {

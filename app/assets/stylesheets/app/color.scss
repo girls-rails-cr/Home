@@ -12,12 +12,12 @@
 .mu-schedule-menu li.active a,
 .mu-schedule-menu li.active a:hover,
 .mu-schedule-menu li.active a:focus {
-	background-color: #EE3268;
+	background-color: #e64c55;
 }
 
 .mu-contact-form .form-control:focus,
 .mu-schedule-menu li a {
-	border: 1px solid #EE3268;
+	border: 1px solid #e64c55;
 }
 
 .mu-send-msg-btn,
@@ -25,27 +25,52 @@
 .mu-register-btn:hover,
 .mu-register-btn:focus,
 .mu-popular-price .mu-register-btn {
-	border: 1px solid #EE3268;
-	background-color: #EE3268;
+	border: 1px solid #e64c55;
+	background-color: #e64c55;
 }
 
 .mu-send-msg-btn:hover span {
-  color: #EE3268;
+  color: #e64c55;
 }
 
 .mu-faq-content .panel-default > .panel-heading + .panel-collapse > .panel-body {
-	border-top-color: #EE3268;
+	border-top-color: #e64c55;
 
 }
 
 .mu-reg-submit-btn:hover,
 .mu-reg-submit-btn:focus {
-	background-color: #EE3268;
-	border: 2px solid #EE3268;
+	background-color: #e64c55;
+	border: 2px solid #e64c55;
 }
 
 #mu-venue {
-  background-color: #d2434a;
+  background-color: #e64c55;
   color: rgb(255, 255, 255);
 }
 .label-form {text-align: center !important;}
+
+.mu-primary-btn:hover,
+.mu-primary-btn:focus,
+.mu-copy-right a:hover,
+.mu-copy-right a:focus,
+.mu-send-msg-btn:hover,
+.mu-send-msg-btn:focus,
+.mu-faq-content .panel-title a:hover,
+.mu-faq-content .panel-title a:focus,
+.mu-faq-content .panel-title a[aria-expanded="true"],
+.mu-faq-content .panel-title a>span,
+.mu-menu ul li a:hover,
+.mu-menu ul li a:focus,
+.mu-single-speakers-info p,
+.mu-single-speakers-social li a:hover,
+.mu-single-speakers-social li a:focus,
+.mu-logo,
+.mu-logo:hover,
+.mu-logo:focus,
+#mu-hero .navbar-default .navbar-brand,
+.mu-navbar .mu-menu li a:hover,
+.mu-navbar .mu-menu li a:focus,
+.mu-single-event .mu-event-time {
+	color: #e64c55;
+}

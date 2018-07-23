@@ -17,9 +17,15 @@
                     <h3><%= current_speaker.full_name %></h3>
                     <p><%= current_speaker.profile.career %></p>
                     <ul class="mu-single-speakers-social">
-                      <li><a href="<%= current_speaker&.profile&.fb_link %>"><i class="fa fa-facebook"></i></a></li>
-                      <li><a href="<%= current_speaker&.profile&.twitter_link %>"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="<%= current_speaker&.profile&.linkedin %>"><i class="fa fa-linkedin"></i></a></li>
+                      <% if current_speaker.profile.fb_link %>
+                        <li><a target="_blank" href="<%= current_speaker&.profile&.fb_link %>"><i class="fa fa-facebook"></i></a></li>
+                      <% end %>
+                      <% if current_speaker.profile.twitter_link %>
+                        <li><a target="_blank" href="<%= current_speaker&.profile&.twitter_link %>"><i class="fa fa-twitter"></i></a></li>
+                      <% end %>
+                      <% if current_speaker&.profile&.linkedin %>
+                        <li><a  target="_blank" href="<%= current_speaker&.profile&.linkedin %>"><i class="fa fa-linkedin"></i></a></li>
+                      <% end %>
                     </ul>
                   </div>
                 </div>

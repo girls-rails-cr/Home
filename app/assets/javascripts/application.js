@@ -1,12 +1,11 @@
 //= require jquery/dist/jquery
 //= require jquery-ujs/src/rails
-//= require jquery3
 //= require jquery-countdown/dist/jquery.countdown
 //= require popper
 //= require bootstrap/dist/js/bootstrap
 //= require cleave.js/dist/cleave
 //= require cleave.js/dist/addons/cleave-phone.cr.js
-//= require_tree .
+//= require_tree ./app
 //= require turbolinks
 
 $(document).on('turbolinks:load', function() {

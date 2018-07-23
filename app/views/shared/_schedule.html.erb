@@ -13,7 +13,7 @@
             <!-- Nav tabs -->
             <ul class="nav nav-tabs mu-schedule-menu" role="tablist">
             <% @schedules.each do|schedule|%>
-              <li role="presentation" class=""><a href="#schedule_<%=schedule.id%>" aria-controls="first-day" role="tab" data-toggle="tab"><%=schedule.name%></a></li>
+              <li role="presentation" class="<%= 'active' if @schedules.first == schedule || @schedules.size == 1  %>""><a href="#schedule_<%=schedule.id%>" aria-controls="first-day" role="tab" aria-expanded="<%= 'true' if @schedules.first !=  @schedules.last || @schedules.size == 1  %>" data-toggle="tab"><%=schedule.name%></a></li>
             <%end%>
            </ul>
           <div class="tab-content mu-schedule-content">

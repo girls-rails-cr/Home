@@ -31,7 +31,7 @@ class PagesController < ApplicationController
   private
 
   def set_event
-    @event = Event.active.first
+    @event = Event.includes(:schedules).active.first
   end
 
   def set_current_sponsors
@@ -43,7 +43,7 @@ class PagesController < ApplicationController
   end
 
   def set_schedule
-    @schedules = @event.schedules
+    @schedules = @event.schedules.includes(:schedule_details)
   end
 
   def set_subscribers

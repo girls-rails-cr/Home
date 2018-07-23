@@ -13,13 +13,6 @@ gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 
-
-#gem 'bootstrap'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-
 gem 'jquery-rails'
 gem 'jquery-countdown-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -76,6 +69,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'active_record_doctor'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -87,8 +81,14 @@ group :development do
   gem 'letter_opener_web'
   # Add a comment summarizing the current schema to the top or bottom of each, Read more here: https://github.com/ctran/annotate_models
   gem 'annotate'
-  #RuboCop is a Ruby static code analyzer. Out of the box it will enforce many of the guidelines outlined in the community, Read more here: https://github.com/bbatsov/rubocop
-  gem 'rubocop', require: false
+  # a code metric tool for rails codes. (http://rails-bestpractices.com)
+  gem 'rails_best_practices'
+  # Automatic Ruby code style checking tool. (http://github.com/bbatsov/rubocop)
+  gem 'rubocop'
+  # RubyCritic is a Ruby code quality reporter (https://github.com/whitesmith/rubycritic)
+  gem 'rubycritic', require: false
+  # Helps to kill N+1 queries and unused eager loading. (http://github.com/flyerhzm/bullet)
+  gem 'bullet'
 end
 
 group :production do
@@ -98,3 +98,12 @@ group :production do
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :assets do
+  gem 'therubyracer'
+  #gem 'bootstrap'
+  # Use SCSS for stylesheets
+  gem 'sass-rails', '~> 5.0'
+  # Use Uglifier as compressor for JavaScript assets
+  gem 'uglifier', '>= 1.3.0'
+end

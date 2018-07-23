@@ -130,14 +130,16 @@
             </div>
 
             <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <%= form.text_field :career, id: :voluntary_career, placeholder: "Área de estudio", class: "form-control" %>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <%= form.select :voluntary_career, ["Ing. Sistemas", "Ing. Software", "Desarrollo Web", "Fotografía", "Otra"],{ prompt: "¿Carrera a fin?"}, {class: "form-control"}%>
+                  </div>
                 </div>
-              </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <%= form.text_field :interest_area, id: :voluntary_interest_area, placeholder: "Área de interés", class: "form-control" %>
+                  <div class="form-group">
+                    <%= form.select :interest_area, ["Quiero ser un mentor", "Quiero ser un expositor", "Quiero ser parte del staff"],{ prompt: "Área de interés"}, {class: "form-control"}%>
+                  </div>
                 </div>
               </div>
               <div class="col-md-12">

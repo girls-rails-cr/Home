@@ -44,7 +44,7 @@ class ScheduleDetail < ApplicationRecord
 
   def speaker
     if user_id.present?
-      User.find_by(id: user_id)
+      User.includes(:profile).find_by(id: user_id)
     else
       false
     end

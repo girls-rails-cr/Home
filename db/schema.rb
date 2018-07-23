@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180203044419) do
+ActiveRecord::Schema.define(version: 2018_07_15_220005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 20180203044419) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["schedule_id"], name: "index_schedule_details_on_schedule_id"
+    t.index ["user_id"], name: "index_schedule_details_on_user_id"
   end
 
   create_table "schedules", force: :cascade do |t|
@@ -103,6 +104,7 @@ ActiveRecord::Schema.define(version: 20180203044419) do
     t.integer "status", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_sponsors_on_event_id"
   end
 
   create_table "subscribers", force: :cascade do |t|
@@ -119,6 +121,7 @@ ActiveRecord::Schema.define(version: 20180203044419) do
     t.boolean "confirmed"
     t.integer "level_knowledge"
     t.string "phone_number"
+    t.index ["event_id"], name: "index_subscribers_on_event_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -137,6 +140,7 @@ ActiveRecord::Schema.define(version: 20180203044419) do
     t.datetime "updated_at", null: false
     t.integer "event_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["event_id"], name: "index_users_on_event_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -150,6 +154,7 @@ ActiveRecord::Schema.define(version: 20180203044419) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "event_id"
+    t.index ["event_id"], name: "index_voluntaries_on_event_id"
   end
 
   add_foreign_key "event_attachments", "events", on_delete: :cascade
